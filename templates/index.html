@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}
+Welcome to CW Clou Test Platform [CTP]- Index
+{% endblock %}
+
+{% block content %}
+
+<div class="container main-container" style="width: 50%; text-align:center; margin-top: 10%;" >
+    <div class="row heading">
+        <h1>Welcome to CW Test Platform [CTP]</h1>
+    <hr/>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/run_tests" method="post">
+                <div>
+                    <label for="file_path" class="form-label">Load JSON File:</label>
+                    <input class="form-control" type="file" id="file_path" name="file_path" accept=".json" required>
+                </div>
+                <br/>
+                <div>
+                    <button class= "btn btn-success" type="submit">Start Test</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+</div>
+<div id="msg" >
+                {% with messages = get_flashed_messages(category_filter=["success"]) %}
+                {% if messages %}
+
+                {% for message in messages %}
+                <div class="alert alert-success" role="alert">{{ message }}</div>
+
+                {% endfor %}
+
+                {% endif %}
+                {% endwith %}
+
+
+            </div>
+<div>
+    {% with messages = get_flashed_messages(category_filter=["error"]) %}
+                {% if messages %}
+
+                {% for message in messages %}
+    <div class="alert alert-danger" role="alert">{{ message }}</div>
+                {% endfor %}
+
+                {% endif %}
+                {% endwith %}
+</div>
+
+{% endblock %}

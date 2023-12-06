@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CWCloud Unittest Results</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="text-capitalize">CWCloud Unittest Results</h2>
+                <p class='attribute'><strong>Start Time: </strong>2023-12-06 11:23:34</p>
+                <p class='attribute'><strong>Duration: </strong>56.59 s</p>
+                <p class='attribute'><strong>Summary: </strong>Total: 1, Pass: 0, Error: 1</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10">
+                <table class='table table-hover table-responsive'>
+                    <thead>
+                        <tr>
+                            <th>Test_POSFunctionalPkg.TC_CashManagementTest.CashManagementTest</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class='warning'>
+                            <td class="col-xs-10">test_cashManagement</td>
+                            <td class="col-xs-1">
+                                <span class="label label-warning" style="display:block;width:40px;">Error</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F25482B2+55298]
+	(No symbol) [0x00007FF6F24B5E02]
+	(No symbol) [0x00007FF6F23705AB]
+	(No symbol) [0x00007FF6F23B175C]
+	(No symbol) [0x00007FF6F23B18DC]
+	(No symbol) [0x00007FF6F23ECBC7]
+	(No symbol) [0x00007FF6F23D20EF]
+	(No symbol) [0x00007FF6F23EAAA4]
+	(No symbol) [0x00007FF6F23D1E83]
+	(No symbol) [0x00007FF6F23A670A]
+	(No symbol) [0x00007FF6F23A7964]
+	GetHandleVerifier [0x00007FF6F28C0AAB+3694587]
+	GetHandleVerifier [0x00007FF6F291728E+4048862]
+	GetHandleVerifier [0x00007FF6F290F173+4015811]
+	GetHandleVerifier [0x00007FF6F25E47D6+695590]
+	(No symbol) [0x00007FF6F24C0CE8]
+	(No symbol) [0x00007FF6F24BCF34]
+	(No symbol) [0x00007FF6F24BD062]
+	(No symbol) [0x00007FF6F24AD3A3]
+	BaseThreadInitThunk [0x00007FFE5FD47344+20]
+	RtlUserThreadStart [0x00007FFE5FF226B1+33]
+</p><p style="color:maroon;">Traceback (most recent call last):
+  File "C:\Users\hindo\PycharmProjects\TestCWCloud2\Test_POSFunctionalPkg\TC_CashManagementTest.py", line 84, in test_cashManagement
+    menu_cashManagement = wait.until(EC.presence_of_element_located(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hindo\PycharmProjects\TestCWCloud2\cwcloud2_env\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F25482B2+55298]
+	(No symbol) [0x00007FF6F24B5E02]
+	(No symbol) [0x00007FF6F23705AB]
+	(No symbol) [0x00007FF6F23B175C]
+	(No symbol) [0x00007FF6F23B18DC]
+	(No symbol) [0x00007FF6F23ECBC7]
+	(No symbol) [0x00007FF6F23D20EF]
+	(No symbol) [0x00007FF6F23EAAA4]
+	(No symbol) [0x00007FF6F23D1E83]
+	(No symbol) [0x00007FF6F23A670A]
+	(No symbol) [0x00007FF6F23A7964]
+	GetHandleVerifier [0x00007FF6F28C0AAB+3694587]
+	GetHandleVerifier [0x00007FF6F291728E+4048862]
+	GetHandleVerifier [0x00007FF6F290F173+4015811]
+	GetHandleVerifier [0x00007FF6F25E47D6+695590]
+	(No symbol) [0x00007FF6F24C0CE8]
+	(No symbol) [0x00007FF6F24BCF34]
+	(No symbol) [0x00007FF6F24BD062]
+	(No symbol) [0x00007FF6F24AD3A3]
+	BaseThreadInitThunk [0x00007FFE5FD47344+20]
+	RtlUserThreadStart [0x00007FFE5FF226B1+33]
+
+</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Total: 1, Pass: 0, Error: 1 -- Duration: 56.59 s
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('td').on('click', '.btn', function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                var $this = $(this);
+                var $nextRow = $this.closest('tr').next('tr');
+                $nextRow.slideToggle("fast");
+                $this.text(function(i, text){
+                    if (text === 'View') {
+                        return 'Hide';
+                    } else {
+                        return 'View';
+                    };
+                });
+            });
+        });
+    </script>
+</body>
+</html

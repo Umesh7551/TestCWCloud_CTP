@@ -1,0 +1,495 @@
+{
+  "test_point_of_sale": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "amount": 100,
+    "note": "This is test by Umesh",
+    "customer_search": "Sameer",
+    "firstname": "Sameer",
+    "lastname": "Patel",
+    "email": "sameerpatel@gmail.com",
+    "phone": "9881755161",
+    "pincode": "413516",
+    "pos_search_input": "Black Current Body Wash"
+  },
+  "test_signup": {
+    "firstname": "Vinod",
+    "lastname": "Hindole",
+    "email": "vamsi.as+114@exceloid.com",
+    "company": "Exceloid",
+    "phone": "7020991641",
+    "postalcode": "413516",
+    "new_password": "Vamsi1940$",
+    "confirm_new_password": "Vamsi1940$"
+
+  },
+  "test_park_bill": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "amount": 100,
+    "note": "This is test by Umesh for park bill.",
+    "pos_search_input": "Black Current Body Wash"
+
+  },
+  "test_cashManagement": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "amount": 100,
+    "note": "This is test by Umesh for Cash Management."
+
+
+  },
+
+  "test_salesHistory": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "amount": 100,
+    "note": "This is test by Umesh for Cash Management.",
+    "search_customer": "Abhishek",
+    "document_no": 1234
+
+  },
+  "test_closeTill": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "amount": 100,
+    "note": "This is test by Umesh for Cash Management."
+  },
+  "test_addProducts": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "product_info": {"Product Name": "Men Running Shoes Run 100", "Product Category": "Running Shoes",
+                     "UOM": "Unit", "Tax Category": "GST 5%", "Sales Price": "899", "List Price": "899",
+                     "Purchase Price": "849", "UPC": "", "Product Description": "This is a lightweight men's running shoes with cushioning for running up to 10km per week",
+                      "Image URL": "https://contents.mediadecathlon.com/p2006788/8ff26bb9238a317671e10df111d7c129/p2006788.jpg?format=auto&quality=70&f=650x0",
+                      "Product Catalogue": "POS Catalogue"
+                    }
+  },
+  "test_addProductCategory": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Category Code": 1121,
+    "Category Name": "Running Shoes",
+    "Parent Category": "All Products",
+    "Category Description": "This is a lightweight men's running shoes with cushioning for running up to 10km per week"
+  },
+  "test_addProductCatalogue": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Product Catalogue Name": "POS Catalogue2"
+  },
+  "test_addBrand": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Brand Name": "Lancer"
+  },
+  "test_addImageLibrary": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Image": "https://contents.mediadecathlon.com/p2006788/8ff26bb9238a317671e10df111d7c129/p2006788.jpg?format=auto&quality=70&f=650x0",
+    "Description": "This is test image.",
+    "Image Group": ""
+  },
+  "test_addRFIDTag": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Product Code": "",
+    "Product": "",
+    "Tag Value": "",
+    "Tag Type": "",
+    "Tagging Date": "",
+    "Batch Number": "",
+    "Batch": "",
+    "Location": "",
+    "Tag Status": "",
+    "Last Scanned Date": "",
+    "Scanned By": ""
+  },
+  "test_posOrders": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": "Exceloid-901",
+    "Sale Type": "",
+    "Document Type": "POS Order",
+    "Document No": "",
+    "Order Date": "",
+    "Order Time": "",
+    "B2C Customer": "",
+    "Price List": "",
+    "Payment Method": "",
+    "Sales Rep": ""
+  },
+  "test_customers": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Registered Store": "",
+    "First Name": "",
+    "Name": "",
+    "Last Name": "",
+    "Mobile No": "",
+    "Country Code": "",
+    "Email": "",
+    "Pincode": "",
+    "Default Customer": "",
+    "Credit Limit": "",
+    "Payment Method": "",
+    "Loyalty Level": "",
+    "Loyalty Balance": "",
+    "Last Visit Date": "",
+    "Last Billing Amount": "",
+    "Average Basket Value": "",
+    "No of Visits": ""
+  },
+  "test_addsupplier": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business Unit": "",
+    "Supplier Code": "",
+    "Name": "",
+    "Supplier Category": "",
+    "Price List": "",
+    "Description": "",
+    "Reference_no": "",
+    "GST_No": "",
+    "Payment_Method": "",
+    "Payment_Terms": "",
+    "Currency": "",
+    "Lead_Days": ""
+  },
+  "test_quick_purchase_order": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Supplier": "",
+    "Remarks": "",
+    "Date": ""
+  },
+  "test_purchase_order": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Date": "",
+    "Supplier": "",
+    "Supplier_Address": "",
+    "Delivery_Location": "",
+    "Storage_Location": "",
+    "Payment_Terms": "",
+    "Price_List": ""
+
+  },
+  "test_quick_goods_receipt": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Supplier": "",
+    "Supplier_invoice_no": "",
+    "Remarks": ""
+
+  },
+  "test_quick_stock_count": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Type": "",
+    "Remarks": "",
+    "Date": ""
+  },
+  "test_quick_wastage_entry": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Wastage_Type": "",
+    "Remarks": "",
+    "Date": ""
+  },
+  "test_quick_stock_issue": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Source": "",
+    "Destination": "",
+    "Stock_Request": "",
+    "Remarks": "",
+    "Date": ""
+  },
+  "test_quick_stock_receipt": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Source": "",
+    "Destination": "",
+    "Stock_Issue": "",
+    "Remarks": "",
+    "Date": ""
+  },
+  "test_Sales_by_Product_Report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": "",
+    "Product": ""
+  },
+  "test_Sales_by_Product_Category": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": "",
+    "Product_Category": ""
+  },
+  "test_Sales_by_Customer_Report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": "",
+    "Customer": ""
+
+  },
+  "test_Sales_By_Payment_Mode_Report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": ""
+  },
+  "test_Daily_Sales_Report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": ""
+  },
+  "test_amount_wise_nob_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": ""
+  },
+  "test_hourly_sales_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": "",
+    "Product": ""
+  },
+  "test_tax_summery_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": ""
+  },
+  "test_sales_tax_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": ""
+  },
+  "test_wastage_summery_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Storage_Location": "",
+    "Product": ""
+  },
+  "test_stock_ledger_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Storage_Location": "",
+    "Product_Category": "",
+    "Product": ""
+  },
+  "test_in_transit_stock_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": ""
+  },
+  "test_inventory_adjustment_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Product_Category": "",
+    "Product": ""
+  },
+  "test_stock_position_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Storage_Location": "",
+    "Product": ""
+  },
+  "test_stock_aging_report_retail": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Supplier": "",
+    "Product_Category": "",
+    "Product": ""
+  },
+  "test_low_stock_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Storage_Location": ""
+  },
+  "test_current_stock_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Storage_Location": ""
+  },
+  "test_stock_movement_report_retail": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Product_Category": "",
+    "Product": ""
+  },
+  "test_pending_stock_issue_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": ""
+  },
+  "test_purchase_summary_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Order_Status": "",
+    "Supplier": ""
+  },
+  "test_purchase_by_product_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Supplier": "",
+    "Product_Name": ""
+  },
+  "test_purchase_by_supplier_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Supplier": ""
+  },
+  "test_purchase_tax_summary_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Tax_Category": ""
+  },
+  "test_supplier_statement_report": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Supplier": ""
+  },
+  "test_addBusiness_unit": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_unit_id": "",
+    "Name": "",
+    "Description": "",
+    "Type": "",
+    "Parent_Business_Unit": "",
+    "Legal_Entity": "",
+    "GST_No": "",
+    "Currency": "",
+    "External_Bunit_ref": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Image_url": ""
+  },
+  "test_addStorage_location": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Value": "",
+    "Name": "",
+    "Storage_Capacity": ""
+  },
+  "test_addTill": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Store": "",
+    "POS_Type": "",
+    "Till_ID": "",
+    "Name": "",
+    "Description": "",
+    "Next_Order_Number": "",
+    "Prefix": "",
+    "Suffix": "",
+    "Access_Controller": "",
+    "KOT_Print_Template": "",
+    "Status": "",
+    "Logged_in_Cashier": "",
+    "Cancel_KOT_Print_Template": ""
+  },
+  "test_addTax_Category": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Name": "",
+    "Description": "",
+    "Intra_Region_Tax": "",
+    "Inter_Region_Tax": ""
+  },
+  "test_addTax": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Name": "",
+    "Tax_Category": "",
+    "Rate": "",
+    "Parent_Tax_Rate": "",
+    "Description": ""
+  },
+  "test_addSupplier_Category": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Code": "",
+    "Category_Name": ""
+  },
+  "test_POS_Settings": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Payment_Mode": "Paytm",
+    "Customer_Search": "BeforePayment"
+  },
+  "test_addPricing_Rules": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Type": "",
+    "Name": "",
+    "Printed_Name": "",
+    "Description": "",
+    "Start_Date": "",
+    "End_Date": "",
+    "Coupon_Expiry_Date": "",
+    "Discount_Type": "",
+    "No_of_Coupons": "",
+    "Gift_Voucher_Type": "",
+    "Minimum_Qty": "",
+    "Maximum_Qty": "",
+    "Discount_X_Qty": "",
+    "Discount_Y_Qty": "",
+    "Minimum_Bill_Amount": "",
+    "Maximum_Bill_Amount": "",
+    "POS_Sales_Type": ""
+  },
+  "test_addUser": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "FirstName": "",
+    "LastName": "",
+    "UserName": "",
+    "Home_Dashboard": "",
+    "Home_Window": "",
+    "Home_Report": "",
+    "Email": "",
+    "Description": ""
+  },
+  "test_addReturn_Reasons": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Search_Key": "",
+    "Name": "",
+    "Description": ""
+  },
+  "test_addEmail_Templates": {
+    "username": "vamsi.as+114@exceloid.com",
+    "password": "Vamsi1940$",
+    "Business_Unit": "",
+    "Name": "",
+    "Subject": "",
+    "From_Email": "",
+    "Reply_To": "",
+    "To_Email": ""
+  }
+}
