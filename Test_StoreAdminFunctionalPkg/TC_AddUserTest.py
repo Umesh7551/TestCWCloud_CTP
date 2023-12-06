@@ -1,8 +1,8 @@
 from CommonImportsPkg.common_imports import *
 
-class AddTillTest(unittest.TestCase):
+class AddUserTest(unittest.TestCase):
     def __init__(self, methodName='test_addUser', data=None):
-        super(AddTillTest, self).__init__(methodName)
+        super(AddUserTest, self).__init__(methodName)
         self.data = data
 
     def setUp(self):

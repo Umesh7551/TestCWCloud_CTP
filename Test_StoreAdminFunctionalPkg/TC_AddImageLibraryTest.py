@@ -1,8 +1,8 @@
 from CommonImportsPkg.common_imports import *
 
-class AddImageLibrary(unittest.TestCase):
+class AddImageLibraryTest(unittest.TestCase):
     def __init__(self, methodName='test_addImageLibrary', data=None):
-        super(AddImageLibrary, self).__init__(methodName)
+        super(AddImageLibraryTest, self).__init__(methodName)
         self.data = data
 
     def setUp(self):

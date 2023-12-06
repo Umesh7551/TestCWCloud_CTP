@@ -29,6 +29,7 @@ class TestAutomationApp:
                         # park_bill_test = ParkBillTest(data=self.data)
                         # cash_management_test = CashManagementTest(data=self.data)
                         sales_history_test = SalesHistoryTest(data=self.data)
+                        # close_till_test = CloseTillTest(data=self.data)
                         # add_brand_test = AddBrandTest(data=self.data)
 
                         # suite_pos = unittest.TestSuite([point_of_sale_test, park_bill_test, cash_management_test, sales_history_test, add_brand_test])
