@@ -6,6 +6,7 @@ class PointOfSaleTest(unittest.TestCase):
     def __init__(self, methodName='test_point_of_sale', data=None):
         super(PointOfSaleTest, self).__init__(methodName)
         self.data = data
+        self.test_name = methodName
         # print(self.data)
     def setUp(self):
         self.driver = webdriver.Chrome()
@@ -243,8 +244,8 @@ class PointOfSaleTest(unittest.TestCase):
 
             self.driver.switch_to.window(main_window)
             # messagebox.showinfo("Success", "You have passed Point of Sale test case. ")
-            flash("You have passed Test case.", "success")
+            flash(f"You have passed { self.test_name.upper() } Test case.", "success")
         else:
-            flash("You have not passed Test case.", "error")
+            flash("You have not passed { self.test_name.upper() } Test case.", "error")
             # print("No test data provided")
             # messagebox.showerror("Error", "You have not passed Point of Sale test case. ")
