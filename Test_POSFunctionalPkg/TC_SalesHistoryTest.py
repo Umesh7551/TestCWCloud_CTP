@@ -6,7 +6,7 @@ class SalesHistoryTest(unittest.TestCase):
     def __init__(self, methodName='test_salesHistory', data=None):
         super(SalesHistoryTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -137,5 +137,6 @@ class SalesHistoryTest(unittest.TestCase):
                     # Go to Point of Sale Page
                     menu_point_of_sale = self.driver.find_element(By.XPATH, "//span[text()='Point of Sale']")
                     menu_point_of_sale.click()
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            pass
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

@@ -4,7 +4,7 @@ class AddCustomersTest(unittest.TestCase):
     def __init__(self, methodName='test_customers', data=None):
         super(AddCustomersTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -184,8 +184,6 @@ class AddCustomersTest(unittest.TestCase):
                 save_button.click()
             else:
                 cancel_button.click()
-            flash("You have passed Add Customer Test case.", "success")
-            # messagebox.showinfo("Success", "You have passed Add Customers Test case.")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash("You have not passed Add Customer Test case.", "error")
-            # messagebox.showerror("Error", "You have not passed Add Customers Test case.")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

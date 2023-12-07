@@ -4,7 +4,7 @@ class AddProductCategoryTest(unittest.TestCase):
     def __init__(self, methodName='test_addProductCategory', data=None):
         super(AddProductCategoryTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -97,6 +97,6 @@ class AddProductCategoryTest(unittest.TestCase):
             else:
                 cancel_button.click()
                 time.sleep(5)
-            flash("You have passed Add Product Category Test case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash("You have not passed Add Product Category Test case.", "error")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

@@ -4,7 +4,7 @@ class AddEmailTemplatesTest(unittest.TestCase):
     def __init__(self, methodName='test_addEmail_Templates', data=None):
         super(AddEmailTemplatesTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -111,8 +111,6 @@ class AddEmailTemplatesTest(unittest.TestCase):
                 save_button.click()
             else:
                 cancel_button.click()
-            return flash("You have passed Add Email Templates test case.")
-            # messagebox.showinfo("Success", "You have passed Add Email Templates test case.")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            return flash("You have not passed Add Email Templates test case.")
-            # messagebox.showerror("Error", "You have not passed Add Email Templates test case.")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

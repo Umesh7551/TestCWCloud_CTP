@@ -4,7 +4,7 @@ class AddRFIDTagTest(unittest.TestCase):
     def __init__(self, methodName='test_addRFIDTag', data=None):
         super(AddRFIDTagTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -147,6 +147,6 @@ class AddRFIDTagTest(unittest.TestCase):
                 save_button.click()
             else:
                 cancel_button.click()
-            flash("You have passed Add RFID Tag Test case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash("You have not passed Add RFID Tag Test case.", "error")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

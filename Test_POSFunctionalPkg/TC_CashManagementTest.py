@@ -4,7 +4,7 @@ class CashManagementTest(unittest.TestCase):
     def __init__(self, methodName='test_cashManagement', data=None):
         super(CashManagementTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -14,7 +14,7 @@ class CashManagementTest(unittest.TestCase):
     def test_cashManagement(self):
         if self.data:
             self.driver.maximize_window()
-
+            time.sleep(5)
             self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
             time.sleep(5)
             username = self.data['test_cashManagement']['username']
@@ -141,6 +141,9 @@ class CashManagementTest(unittest.TestCase):
                     note = self.driver.find_element(By.XPATH, "//input[@placeholder='Type to add a note']")
                     note.send_keys(json_note)
                     time.sleep(5)
+                    add_cash_button = self.driver.find_element(By.XPATH, "//span[text()='Add Cash']")
+                    add_cash_button.click()
+                    time.sleep(5)
                 else:
                     pettyCashIn = self.driver.find_element(By.XPATH, "//input[@id='pettyCashIn']")
                     if pettyCashIn.is_selected():
@@ -153,9 +156,9 @@ class CashManagementTest(unittest.TestCase):
                         note = self.driver.find_element(By.XPATH, "//input[@placeholder='Type to add a note']")
                         note.send_keys(json_note)
                         time.sleep(5)
-
-                add_cash_button = self.driver.find_element(By.XPATH, "//span[text()='Add Cash']")
-                add_cash_button.click()
-                flash("You have passed Test case.", "success")
+                    add_cash_button = self.driver.find_element(By.XPATH, "//span[text()='Add Cash']")
+                    add_cash_button.click()
+                    time.sleep(5)
+            flash(f"You have passed { self.test_name.upper() } Test case.", "success")
         else:
-            flash("You have not passed Test case.", "error")
+            flash(f"You have not passed { self.test_name.upper()} Test case.", "error")

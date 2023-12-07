@@ -4,7 +4,7 @@ class ParkBillTest(unittest.TestCase):
     def __init__(self, methodName='test_park_bill', data=None):
         super(ParkBillTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -176,6 +176,6 @@ class ParkBillTest(unittest.TestCase):
             # # Select an option by visible text (replace 'Your Role Text' with the actual text of the role you want to select)
             # select.select_by_visible_text("Park Bill")
             time.sleep(5)
-            flash("You have passed Test case.", "success")
+            flash(f"You have passed { self.test_name.upper() } Test case.", "success")
         else:
-            flash("You have not passed Test case.", "error")
+            flash(f"You have not passed { self.test_name.upper() } Test case.", "error")

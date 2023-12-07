@@ -4,7 +4,7 @@ class ProductWastageReportTest(unittest.TestCase):
     def __init__(self, methodName='test_product_wastage_report', data=None):
         super(ProductWastageReportTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -66,6 +66,6 @@ class ProductWastageReportTest(unittest.TestCase):
             self.assertTrue(run_button.is_displayed(), msg="Run button is not displayed.")
             if input_business_unit is not None:
                 run_button.click()
-            flash("You have passed Test case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash("You have not passed Test case.", "error")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

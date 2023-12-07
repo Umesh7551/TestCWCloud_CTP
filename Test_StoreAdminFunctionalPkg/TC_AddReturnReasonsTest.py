@@ -4,7 +4,7 @@ class AddReturnReasonsTest(unittest.TestCase):
     def __init__(self, methodName='test_addReturn_Reasons', data=None):
         super(AddReturnReasonsTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -108,6 +108,6 @@ class AddReturnReasonsTest(unittest.TestCase):
                 save_button.click()
             else:
                 cancel_button.click()
-            flash("You have passed Add Return Reasons Test Case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash("You have not passed Add Return Reasons Test Case.", "error")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

@@ -82,7 +82,7 @@ class TestAutomationApp:
                         wastage_summary_report_test = WastageSummaryReportTest(data=self.data)
 
                         # suite_pos = unittest.TestSuite([point_of_sale_test, park_bill_test, cash_management_test, sales_history_test, add_brand_test])
-                        suite_pos = unittest.TestSuite([point_of_sale_test])
+                        suite_pos = unittest.TestSuite([park_bill_test])
 
                         runner = HTMLTestRunner(descriptions=True, report_title="CWCloud Unittest Results")
                         result = runner.run(suite_pos)

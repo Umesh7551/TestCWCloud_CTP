@@ -4,7 +4,7 @@ class CloseTillTest(unittest.TestCase):
     def __init__(self, methodName='test_closeTill', data=None):
         super(CloseTillTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -90,6 +90,6 @@ class CloseTillTest(unittest.TestCase):
                 close_till_button.click()
                 time.sleep(10)
                 self.assertEqual(self.driver.current_url, "https://test-auth.cwcloud.in:8412/sign-in")
-            messagebox.showinfo("Success", "You have passed Close Till Test case.")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            messagebox.showerror("Error", "You have not passed Close Till test case.")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

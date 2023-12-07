@@ -247,6 +247,6 @@ class PointOfSaleTest(unittest.TestCase):
             # messagebox.showinfo("Success", "You have passed Point of Sale test case. ")
             flash(f"You have passed { self.test_name.upper() } Test case.", "success")
         else:
-            flash("You have not passed { self.test_name.upper() } Test case.", "error")
+            flash(f"You have not passed { self.test_name.upper() } Test case.", "error")
             # print("No test data provided")
             # messagebox.showerror("Error", "You have not passed Point of Sale test case. ")

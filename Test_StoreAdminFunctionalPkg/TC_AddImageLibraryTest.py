@@ -4,7 +4,7 @@ class AddImageLibraryTest(unittest.TestCase):
     def __init__(self, methodName='test_addImageLibrary', data=None):
         super(AddImageLibraryTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -87,6 +87,6 @@ class AddImageLibraryTest(unittest.TestCase):
                 save_button.click()
             else:
                 cancel_button.click()
-            flash("You have passed Add Image Library Test case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash("You have not passed Add Image Library Test case.")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

@@ -4,7 +4,7 @@ class SalesByProductCategoryTest(unittest.TestCase):
     def __init__(self, methodName='test_Sales_by_Product_Category', data=None):
         super(SalesByProductCategoryTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -73,6 +73,6 @@ class SalesByProductCategoryTest(unittest.TestCase):
             if input_store and input_product_category is not None:
                 run_button.click()
 
-            flash("You have passed Test case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash("You have not passed Test case.", "error")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

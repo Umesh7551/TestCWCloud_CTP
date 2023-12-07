@@ -4,7 +4,7 @@ class QuickGoodsReceiptTest(unittest.TestCase):
     def __init__(self, methodName='test_quick_goods_receipt', data=None):
         super(QuickGoodsReceiptTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -97,6 +97,6 @@ class QuickGoodsReceiptTest(unittest.TestCase):
             self.assertTrue(fetch_button.is_displayed(), msg="Fetch Button is not displayed.")
             if input_business_unit and input_supplier and input_supplier_invoice_no and input_date and input_purchase_order is not None:
                 fetch_button.click()
-            flash("You have passed Test case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash("You have not passed Test case.", "error")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")
