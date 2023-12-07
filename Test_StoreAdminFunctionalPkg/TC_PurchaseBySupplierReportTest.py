@@ -1,7 +1,7 @@
 from CommonImportsPkg.common_imports import *
 
 class PurchaseBySupplierReportTest(unittest.TestCase):
-    def __init__(self, methodName='test_purchase_by_product_report', data=None):
+    def __init__(self, methodName='test_purchase_by_supplier_report', data=None):
         super(PurchaseBySupplierReportTest, self).__init__(methodName)
         self.data = data
 

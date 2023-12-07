@@ -1,7 +1,7 @@
 from CommonImportsPkg.common_imports import *
 
 class AddPricingRulesTest(unittest.TestCase):
-    def __init__(self, methodName='test_addImageLibrary', data=None):
+    def __init__(self, methodName='test_addPricing_Rules', data=None):
         super(AddPricingRulesTest, self).__init__(methodName)
         self.data = data
 

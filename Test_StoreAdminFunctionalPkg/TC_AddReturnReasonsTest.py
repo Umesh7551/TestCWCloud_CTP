@@ -1,7 +1,7 @@
 from CommonImportsPkg.common_imports import *
 
 class AddReturnReasonsTest(unittest.TestCase):
-    def __init__(self, methodName='test_addProductCategory', data=None):
+    def __init__(self, methodName='test_addReturn_Reasons', data=None):
         super(AddReturnReasonsTest, self).__init__(methodName)
         self.data = data
 

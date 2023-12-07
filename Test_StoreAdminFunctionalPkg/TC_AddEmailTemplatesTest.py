@@ -1,7 +1,7 @@
 from CommonImportsPkg.common_imports import *
 
 class AddEmailTemplatesTest(unittest.TestCase):
-    def __init__(self, methodName='test_customers', data=None):
+    def __init__(self, methodName='test_addEmail_Templates', data=None):
         super(AddEmailTemplatesTest, self).__init__(methodName)
         self.data = data
 

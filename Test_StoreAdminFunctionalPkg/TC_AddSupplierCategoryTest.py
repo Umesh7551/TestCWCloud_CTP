@@ -1,7 +1,7 @@
 from CommonImportsPkg.common_imports import *
 
 class AddSupplierCategoryTest(unittest.TestCase):
-    def __init__(self, methodName='test_customers', data=None):
+    def __init__(self, methodName='test_addSupplier_Category', data=None):
         super(AddSupplierCategoryTest, self).__init__(methodName)
         self.data = data
 

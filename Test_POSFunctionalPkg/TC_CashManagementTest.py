@@ -79,7 +79,7 @@ class CashManagementTest(unittest.TestCase):
             # open_till_button = self.driver.find_element(By.XPATH, "//button[@id='step3']")
             # open_till_button.click()
 
-            time.sleep(5)
+            time.sleep(15)
             # wait = WebDriverWait(self.driver, 20)
             # menu_cashManagement = wait.until(EC.presence_of_element_located(
             #     (By.XPATH, "//span[text()='Cash Management']")))
