@@ -1,10 +1,10 @@
 from CommonImportsPkg.common_imports import *
 
 class LoginTest(unittest.TestCase):
-    def __init__(self, methodName='test_tax_summery_report', data=None):
+    def __init__(self, methodName='test_login', data=None):
         super(LoginTest, self).__init__(methodName)
         self.data = data
-
+        self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -16,8 +16,8 @@ class LoginTest(unittest.TestCase):
             self.driver.maximize_window()
             self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
             time.sleep(5)
-            username = self.data['test_tax_summery_report']['username']
-            password = self.data['test_tax_summery_report']['password']
+            username = self.data['test_login']['username']
+            password = self.data['test_login']['password']
             # username_input = self.driver.find_element(By.XPATH, "//input[@class='mb-4 w-full h-[40px] sm:h-[40px] rounded px-3 py-1 text-[#101828] placeholder:text-[#98A2B3] border-[0.5px] border-[#DaDaDa] text-xs ff-inter font-normal outline-none']")
             username_input = self.driver.find_element(By.XPATH, "//input[@placeholder='Enter Email']")
             self.assertTrue(username_input.is_displayed(), msg="Username input box is not displayed.")
@@ -38,6 +38,6 @@ class LoginTest(unittest.TestCase):
             login_button.click()
             time.sleep(10)
             self.assertEqual(self.driver.current_url, "")
-            flash("You have passed Test case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash("You have not passed Test case.", "error")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")
