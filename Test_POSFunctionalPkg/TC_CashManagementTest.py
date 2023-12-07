@@ -61,7 +61,7 @@ class CashManagementTest(unittest.TestCase):
                     self.driver.switch_to.window(handle)
                     break
             # Click on Till
-            time.sleep(5)
+            time.sleep(10)
             till = self.driver.find_element(By.XPATH, "//div[@class='ant-card-body']")
             till.click()
             # self.assertEqual(self.driver.current_url, "https://test-pos.cwcloud.in:8412//?appId=1015&name=POS#/open-till-component")
@@ -137,7 +137,8 @@ class CashManagementTest(unittest.TestCase):
                     amount.send_keys(json_amount)
                     time.sleep(5)
                     json_note = self.data['test_cashManagement']['note']
-                    note = self.driver.find_element(By.XPATH, "//input[@id='note']")
+                    # note = self.driver.find_element(By.XPATH, "//input[@id='note']")
+                    note = self.driver.find_element(By.XPATH, "//input[@placeholder='Type to add a note']")
                     note.send_keys(json_note)
                     time.sleep(5)
                 else:
@@ -148,12 +149,13 @@ class CashManagementTest(unittest.TestCase):
                         amount.send_keys(json_amount)
                         time.sleep(5)
                         json_note = self.data['test_cashManagement']['note']
-                        note = self.driver.find_element(By.XPATH, "//input[@id='note']")
+                        # note = self.driver.find_element(By.XPATH, "//input[@id='note']")
+                        note = self.driver.find_element(By.XPATH, "//input[@placeholder='Type to add a note']")
                         note.send_keys(json_note)
                         time.sleep(5)
 
                 add_cash_button = self.driver.find_element(By.XPATH, "//span[text()='Add Cash']")
                 add_cash_button.click()
-            flash("You have passed Test case.", "success")
+                flash("You have passed Test case.", "success")
         else:
             flash("You have not passed Test case.", "error")

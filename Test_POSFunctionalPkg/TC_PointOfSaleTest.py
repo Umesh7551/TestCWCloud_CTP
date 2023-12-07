@@ -1,3 +1,5 @@
+import time
+
 from CommonImportsPkg.common_imports import *
 
 class PointOfSaleTest(unittest.TestCase):
@@ -92,7 +94,7 @@ class PointOfSaleTest(unittest.TestCase):
                     self.driver.switch_to.window(handle)
                     break
             # Click on Till
-            time.sleep(10)
+            time.sleep(15)
 
             till = self.driver.find_element(By.XPATH, "//div[@class='ant-card-body']")
             till.click()
@@ -101,12 +103,12 @@ class PointOfSaleTest(unittest.TestCase):
             json_amount = self.data['test_point_of_sale']['amount']
             # amount = self.driver.find_element(By.XPATH, "//input[@class='ant-input transactionAmtInput']")
             # amount.send_keys(json_amount)
-
+            # time.sleep(5)
             # insert note into note input box
             json_note = self.data['test_point_of_sale']['note']
             # note = self.driver.find_element(By.XPATH, "//input[@class='ant-input transactionAmtInput']")
             # note.send_keys(json_note)
-
+            # time.sleep(5)
             # Click open till button
             # open_till_button = self.driver.find_element(By.XPATH, "//button[@id='step3']")
             # open_till_button.click()
@@ -178,7 +180,7 @@ class PointOfSaleTest(unittest.TestCase):
             pos_search_input.send_keys(json_pos_search_input)
             # Simulate pressing the Enter keyole
             pos_search_input.send_keys(Keys.RETURN)
-            time.sleep(20)
+            time.sleep(10)
 
             # Increase and Decrease Quantity buttons are showing on double-clicking
 
