@@ -1,10 +1,13 @@
 from CommonImportsPkg.common_imports import *
+from login import Login
+
 
 class QuickGoodsReceiptTest(unittest.TestCase):
     def __init__(self, methodName='test_quick_goods_receipt', data=None):
         super(QuickGoodsReceiptTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.login_helper = Login(self.driver, self.data, self)

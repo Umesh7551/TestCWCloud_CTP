@@ -1,10 +1,13 @@
 from CommonImportsPkg.common_imports import *
+from login import Login
+
 
 class AddRFIDTagTest(unittest.TestCase):
     def __init__(self, methodName='test_addRFIDTag', data=None):
         super(AddRFIDTagTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
 

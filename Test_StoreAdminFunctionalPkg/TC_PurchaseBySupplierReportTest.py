@@ -1,10 +1,13 @@
 from CommonImportsPkg.common_imports import *
+from login import Login
+
 
 class PurchaseBySupplierReportTest(unittest.TestCase):
     def __init__(self, methodName='test_purchase_by_supplier_report', data=None):
         super(PurchaseBySupplierReportTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.login_helper = Login(self.driver, self.data, self)

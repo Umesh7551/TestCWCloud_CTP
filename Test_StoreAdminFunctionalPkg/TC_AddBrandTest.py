@@ -1,13 +1,17 @@
 from CommonImportsPkg.common_imports import *
 from login import Login
+
+
 class AddBrandTest(unittest.TestCase):
     def __init__(self, methodName='test_addBrand', data=None):
         super(AddBrandTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.login_helper = Login(self.driver, self.data, self)
+
     def tearDown(self):
         self.driver.close()
 

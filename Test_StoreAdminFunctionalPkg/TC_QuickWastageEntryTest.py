@@ -1,10 +1,13 @@
 from CommonImportsPkg.common_imports import *
+from login import Login
+
 
 class QuickWastageEntryTest(unittest.TestCase):
     def __init__(self, methodName='test_quick_wastage_entry', data=None):
         super(QuickWastageEntryTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.login_helper = Login(self.driver, self.data, self)
@@ -88,5 +91,3 @@ class QuickWastageEntryTest(unittest.TestCase):
             flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
             flash(f"You have not passed {self.test_name.upper()} Test case.", "error")
-
-

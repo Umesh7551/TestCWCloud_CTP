@@ -1,14 +1,16 @@
 from CommonImportsPkg.common_imports import *
+from login import Login
+
 
 class InventoryAdjustmentReportTest(unittest.TestCase):
     def __init__(self, methodName='test_inventory_adjustment_report', data=None):
         super(InventoryAdjustmentReportTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.login_helper = Login(self.driver, self.data, self)
-
 
     def tearDown(self):
         self.driver.close()

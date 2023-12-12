@@ -74,4 +74,3 @@ from Test_StoreAdminFunctionalPkg.TC_SupplierStatementReportTest import Supplier
 from Test_StoreAdminFunctionalPkg.TC_TaxSummaryReportTest import TaxSummaryReportTest
 from Test_StoreAdminFunctionalPkg.TC_WastageSummaryReportTest import WastageSummaryReportTest
 import importlib
-from login import Login

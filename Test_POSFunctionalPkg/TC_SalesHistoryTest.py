@@ -1,12 +1,13 @@
-import time
-
 from CommonImportsPkg.common_imports import *
+from login import Login
+
 
 class SalesHistoryTest(unittest.TestCase):
     def __init__(self, methodName='test_salesHistory', data=None):
         super(SalesHistoryTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.login_helper = Login(self.driver, self.data, self)

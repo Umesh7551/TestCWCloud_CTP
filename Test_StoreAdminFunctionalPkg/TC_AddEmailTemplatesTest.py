@@ -1,13 +1,17 @@
 from CommonImportsPkg.common_imports import *
+from login import Login
+
 
 class AddEmailTemplatesTest(unittest.TestCase):
     def __init__(self, methodName='test_addEmail_Templates', data=None):
         super(AddEmailTemplatesTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.login_helper = Login(self.driver, self.data, self)
+
     def tearDown(self):
         self.driver.close()
 

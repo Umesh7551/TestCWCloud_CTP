@@ -1,10 +1,13 @@
 from CommonImportsPkg.common_imports import *
+from login import Login
+
 
 class PosSettingsTest(unittest.TestCase):
     def __init__(self, methodName='test_pos_settings', data=None):
         super(PosSettingsTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.login_helper = Login(self.driver, self.data, self)
@@ -126,7 +129,8 @@ class PosSettingsTest(unittest.TestCase):
                 allow_cash_out.click()
             # POS
             allow_return_refund = self.driver.find_element(By.ID, "mainForm_allowReturnRefund")
-            self.assertTrue(allow_return_refund.is_displayed(), msg="Allow Return and Refund Check box is not displayed")
+            self.assertTrue(allow_return_refund.is_displayed(),
+                            msg="Allow Return and Refund Check box is not displayed")
             if not allow_return_refund.is_selected():
                 allow_return_refund.click()
 

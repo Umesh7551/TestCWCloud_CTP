@@ -1,4 +1,5 @@
 from CommonImportsPkg.common_imports import *
+from login import Login
 
 
 class CloseTillTest(unittest.TestCase):

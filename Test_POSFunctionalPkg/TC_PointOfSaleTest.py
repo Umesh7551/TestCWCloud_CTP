@@ -1,6 +1,6 @@
-import time
-
 from CommonImportsPkg.common_imports import *
+from login import Login
+
 
 class PointOfSaleTest(unittest.TestCase):
     def __init__(self, methodName='test_point_of_sale', data=None):
@@ -8,6 +8,7 @@ class PointOfSaleTest(unittest.TestCase):
         self.data = data
         self.test_name = methodName
         # print("JSON Data got in Constructor: ", self.data)
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.login_helper = Login(self.driver, self.data, self)
@@ -129,7 +130,6 @@ class PointOfSaleTest(unittest.TestCase):
                 EC.presence_of_element_located((By.XPATH, "//input[@placeholder='Search for products by code/name']"))
             )
 
-
             # Wait for the input element to be present and visible
             # wait = WebDriverWait(self.driver, 20)
             # pos_search_input = wait.until(EC.presence_of_element_located(
@@ -203,12 +203,11 @@ class PointOfSaleTest(unittest.TestCase):
 
             self.driver.switch_to.window(main_window)
             # messagebox.showinfo("Success", "You have passed Point of Sale test case. ")
-            flash(f"You have passed { self.test_name.upper() } Test case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash(f"You have not passed { self.test_name.upper() } Test case.", "error")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")
             # print("No test data provided")
             # messagebox.showerror("Error", "You have not passed Point of Sale test case. ")
-
 
     def tearDown(self):
         self.driver.close()

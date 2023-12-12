@@ -1,4 +1,5 @@
 from CommonImportsPkg.common_imports import *
+from login import Login
 
 
 class CashManagementTest(unittest.TestCase):
@@ -163,6 +164,6 @@ class CashManagementTest(unittest.TestCase):
                     add_cash_button = self.driver.find_element(By.XPATH, "//span[text()='Add Cash']")
                     add_cash_button.click()
                     time.sleep(5)
-            flash(f"You have passed { self.test_name.upper() } Test case.", "success")
+            flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
-            flash(f"You have not passed { self.test_name.upper()} Test case.", "error")
+            flash(f"You have not passed {self.test_name.upper()} Test case.", "error")
