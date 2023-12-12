@@ -9,30 +9,31 @@ class SalesHistoryTest(unittest.TestCase):
         self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
+        self.login_helper = Login(self.driver, self.data, self)
 
     def tearDown(self):
         self.driver.close()
 
     def test_salesHistory(self):
         if self.data:
-            self.driver.maximize_window()
-
-            self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
-            time.sleep(5)
-            username = self.data['test_salesHistory']['username']
-            password = self.data['test_salesHistory']['password']
-            # username_input = self.driver.find_element(By.XPATH, "//input[@class='mb-4 w-full h-[40px] sm:h-[40px] rounded px-3 py-1 text-[#101828] placeholder:text-[#98A2B3] border-[0.5px] border-[#DaDaDa] text-xs ff-inter font-normal outline-none']")
-            username_input = self.driver.find_element(By.XPATH, "//input[@placeholder='Enter Email']")
-            username_input.send_keys(username)
-
-            # Step 5: Enter password in the password input box
-            password_input = self.driver.find_element(By.XPATH, "//input[@class=' w-full h-[40px] sm:h-[40px] px-3 py-1 border-[1px] border-[#dadada] text-[#101828] rounded placeholder:text-[#98A2B3] text-xs ff-inter font-normal outline-none']")
-            password_input.send_keys(password)
-
-            # Step 6: Click on the login button
-            login_button = self.driver.find_element(By.XPATH, "//button[@class='flex items-center justify-center mb-2 xs:mt-[20px] sm:mt-[20px] w-full h-[50px] sm:h-[50px] px-4 py-2 text-white bg-[#91C507] text-[13px] ff-inter font-bold outline-none rounded']")
-            login_button.click()
-            time.sleep(5)
+            self.login_helper.login()
+            # self.driver.maximize_window()
+            # self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
+            # time.sleep(5)
+            # username = self.data['test_salesHistory']['username']
+            # password = self.data['test_salesHistory']['password']
+            # # username_input = self.driver.find_element(By.XPATH, "//input[@class='mb-4 w-full h-[40px] sm:h-[40px] rounded px-3 py-1 text-[#101828] placeholder:text-[#98A2B3] border-[0.5px] border-[#DaDaDa] text-xs ff-inter font-normal outline-none']")
+            # username_input = self.driver.find_element(By.XPATH, "//input[@placeholder='Enter Email']")
+            # username_input.send_keys(username)
+            #
+            # # Step 5: Enter password in the password input box
+            # password_input = self.driver.find_element(By.XPATH, "//input[@class=' w-full h-[40px] sm:h-[40px] px-3 py-1 border-[1px] border-[#dadada] text-[#101828] rounded placeholder:text-[#98A2B3] text-xs ff-inter font-normal outline-none']")
+            # password_input.send_keys(password)
+            #
+            # # Step 6: Click on the login button
+            # login_button = self.driver.find_element(By.XPATH, "//button[@class='flex items-center justify-center mb-2 xs:mt-[20px] sm:mt-[20px] w-full h-[50px] sm:h-[50px] px-4 py-2 text-white bg-[#91C507] text-[13px] ff-inter font-bold outline-none rounded']")
+            # login_button.click()
+            # time.sleep(5)
             # Step 6: Select POS
             # pos = self.driver.find_element(By.XPATH, "//article[@class='bg-white mb-2 sm:mb-0 md:w-[180px] lg:w-[180px] sm:w-[200px] xs:w-full rounded-[12px] px-3 py-3 mr-2 sm:mr-4 justify-between relative'][1]")
             pos = self.driver.find_element(By.XPATH, "//h4[text()='POS']")

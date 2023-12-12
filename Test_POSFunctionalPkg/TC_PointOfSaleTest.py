@@ -9,66 +9,13 @@ class PointOfSaleTest(unittest.TestCase):
         self.test_name = methodName
         # print("JSON Data got in Constructor: ", self.data)
     def setUp(self):
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.headless = False
-        self.driver = webdriver.Chrome(options=chrome_options)
-        self.driver.maximize_window()
-
+        self.driver = webdriver.Chrome()
+        self.login_helper = Login(self.driver, self.data, self)
 
     def test_point_of_sale(self):
         # Access the JSON data within your test method
         if self.data:
-            print("JSON Data in test method: ", self.data)
-            # self.driver.maximize_window()
-            # Step 1: Open the URL
-            # self.driver.get("https://test.cwcloud.in/")
-            self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
-            self.assertEqual(self.driver.current_url, "https://test-auth.cwcloud.in:8412/sign-in")
-            # Step 2: Click on the "Login" link text
-            # login_link = self.driver.find_element(By.LINK_TEXT, "Login")
-            # login_link = self.driver.find_element(By.XPATH, "//span[@class='ff-Inter text-xs text-darkBlack mr-4 xl:mr-10 hover:opacity-70 transition-all duration-200 ease-in hidden sm:block']")
-            # login_link.click()
-            # self.assertEqual(self.driver.current_url, "https://test-auth.cwcloud.in:8412/sign-in")
-            # Step 3: Switch to the new tab or window
-            # Get the current window handle (main window)
-            # main_window = self.driver.current_window_handle
-            #
-            # # Get all window handles (including the main window)
-            # all_handles = self.driver.window_handles
-            #
-            # # Switch to the new window
-            # for handle in all_handles:
-            #     if handle != main_window:
-            #         self.driver.switch_to.window(handle)
-            #         break
-
-            # Now you're in the new tab/window.
-            time.sleep(10)
-            username = self.data['test_point_of_sale']['username']
-            # print(username)
-            password = self.data['test_point_of_sale']['password']
-            # Step 4: Enter username in the username input box
-
-            # username_input = self.driver.find_element(By.XPATH, "//input[@class='mb-4 w-full h-[40px] sm:h-[40px] rounded px-3 py-1 text-[#101828] placeholder:text-[#98A2B3] border-[0.5px] border-[#DaDaDa] text-xs ff-inter font-normal outline-none']")
-            # username_input = self.driver.find_element(By.XPATH, "//input[@placeholder='Enter Email']")
-            username_input = self.driver.find_element(By.ID, "username")
-            self.assertTrue(username_input.is_displayed(), msg="Username input box is not displayed.")
-            username_input.send_keys(username)
-
-            # Step 5: Enter password in the password input box
-            # password_input = self.driver.find_element(By.XPATH, "//input[@class=' w-full h-[40px] sm:h-[40px] px-3 py-1 border-[1px] border-[#dadada] text-[#101828] rounded placeholder:text-[#98A2B3] text-xs ff-inter font-normal outline-none']")
-            password_input = self.driver.find_element(By.ID, "password")
-            self.assertTrue(password_input.is_displayed(), msg="Password input box is not displayed.")
-            password_input.send_keys(password)
-
-            # Step 6: Click on the login button
-            # login_button = self.driver.find_element(By.XPATH, "//button[@class='flex items-center justify-center mb-2 xs:mt-[20px] sm:mt-[20px] w-full h-[50px] sm:h-[50px] px-4 py-2 text-white bg-[#91C507] text-[13px] ff-inter font-bold outline-none rounded']")
-            login_button = self.driver.find_element(By.ID, "login")
-            self.assertTrue(login_button.is_displayed(), msg="Login Button is not displayed.")
-            login_button.click()
-            time.sleep(10)
-            # self.assertEqual(self.driver.current_url, "https://test-app.cwcloud.in:8412/my-apps")
-
+            self.login_helper.login()
             # Step 6: Select POS
             # pos = self.driver.find_element(By.XPATH, "//article[@class='bg-white mb-2 sm:mb-0 md:w-[180px] lg:w-[180px] sm:w-[200px] xs:w-full rounded-[12px] px-3 py-3 mr-2 sm:mr-4 justify-between relative'][1]")
             pos = self.driver.find_element(By.XPATH, "//h4[text()='POS']")

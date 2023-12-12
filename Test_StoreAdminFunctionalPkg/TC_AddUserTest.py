@@ -7,12 +7,14 @@ class AddUserTest(unittest.TestCase):
         self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
+        self.login_helper = Login(self.driver, self.data, self)
 
     def tearDown(self):
         self.driver.close()
 
     def test_addUser(self):
         if self.data:
+            self.login_helper.login()
             self.driver.maximize_window()
             self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
             time.sleep(5)

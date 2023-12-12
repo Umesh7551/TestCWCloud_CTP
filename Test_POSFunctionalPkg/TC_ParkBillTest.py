@@ -1,39 +1,42 @@
 from CommonImportsPkg.common_imports import *
 
+
 class ParkBillTest(unittest.TestCase):
     def __init__(self, methodName='test_park_bill', data=None):
         super(ParkBillTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
+        self.login_helper = Login(self.driver, self.data, self)
 
     def tearDown(self):
         self.driver.close()
 
     def test_park_bill(self):
         if self.data:
-            self.driver.maximize_window()
-
+            self.login_helper.login()
+            # self.driver.maximize_window()
             # Step 1: Open the URL
             # self.driver.get("https://test.cwcloud.in/")
-            self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
-            time.sleep(5)
+            # self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
+            # time.sleep(5)
             # Step 4: Enter username in the username input box
-            username = self.data['test_park_bill']['username']
-            password = self.data['test_park_bill']['password']
+            # username = self.data['test_park_bill']['username']
+            # password = self.data['test_park_bill']['password']
             # username_input = self.driver.find_element(By.XPATH, "//input[@class='mb-4 w-full h-[40px] sm:h-[40px] rounded px-3 py-1 text-[#101828] placeholder:text-[#98A2B3] border-[0.5px] border-[#DaDaDa] text-xs ff-inter font-normal outline-none']")
-            username_input = self.driver.find_element(By.XPATH, "//input[@placeholder='Enter Email']")
-            username_input.send_keys(username)
+            # username_input = self.driver.find_element(By.XPATH, "//input[@placeholder='Enter Email']")
+            # username_input.send_keys(username)
 
             # Step 5: Enter password in the password input box
-            password_input = self.driver.find_element(By.XPATH, "//input[@class=' w-full h-[40px] sm:h-[40px] px-3 py-1 border-[1px] border-[#dadada] text-[#101828] rounded placeholder:text-[#98A2B3] text-xs ff-inter font-normal outline-none']")
-            password_input.send_keys(password)
+            # password_input = self.driver.find_element(By.XPATH, "//input[@class=' w-full h-[40px] sm:h-[40px] px-3 py-1 border-[1px] border-[#dadada] text-[#101828] rounded placeholder:text-[#98A2B3] text-xs ff-inter font-normal outline-none']")
+            # password_input.send_keys(password)
 
             # Step 6: Click on the login button
-            login_button = self.driver.find_element(By.XPATH, "//button[@class='flex items-center justify-center mb-2 xs:mt-[20px] sm:mt-[20px] w-full h-[50px] sm:h-[50px] px-4 py-2 text-white bg-[#91C507] text-[13px] ff-inter font-bold outline-none rounded']")
-            login_button.click()
-            time.sleep(5)
+            # login_button = self.driver.find_element(By.XPATH, "//button[@class='flex items-center justify-center mb-2 xs:mt-[20px] sm:mt-[20px] w-full h-[50px] sm:h-[50px] px-4 py-2 text-white bg-[#91C507] text-[13px] ff-inter font-bold outline-none rounded']")
+            # login_button.click()
+            # time.sleep(5)
             # self.assertEqual(self.driver.current_url, "https://test-app.cwcloud.in:8412/my-apps")
 
             # Step 6: Select POS

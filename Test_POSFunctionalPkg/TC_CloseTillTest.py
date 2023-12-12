@@ -1,24 +1,27 @@
 from CommonImportsPkg.common_imports import *
 
+
 class CloseTillTest(unittest.TestCase):
     def __init__(self, methodName='test_closeTill', data=None):
         super(CloseTillTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
+
     def setUp(self):
         self.driver = webdriver.Chrome()
+        self.login_helper = Login(self.driver, self.data, self)
 
     def tearDown(self):
         self.driver.close()
 
     def test_closeTill(self):
         if self.data:
-            self.driver.maximize_window()
-
-            self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
-            time.sleep(5)
-            username = self.data['test_closeTill']['username']
-            password = self.data['test_closeTill']['password']
+            self.login_helper.login()
+            # self.driver.maximize_window()
+            # self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
+            # time.sleep(5)
+            # username = self.data['test_closeTill']['username']
+            # password = self.data['test_closeTill']['password']
             # username_input = self.driver.find_element(By.XPATH, "//input[@class='mb-4 w-full h-[40px] sm:h-[40px] rounded px-3 py-1 text-[#101828] placeholder:text-[#98A2B3] border-[0.5px] border-[#DaDaDa] text-xs ff-inter font-normal outline-none']")
             # username_input = self.driver.find_element(By.XPATH, "//input[@placeholder='Enter Email']")
             # username_input.send_keys(username)

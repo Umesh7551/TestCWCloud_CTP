@@ -7,35 +7,34 @@ class AddCustomersTest(unittest.TestCase):
         self.test_name = methodName
     def setUp(self):
         self.driver = webdriver.Chrome()
-
+        self.login_helper = Login(self.driver, self.data, self)
     def tearDown(self):
         self.driver.close()
 
     def test_customers(self):
         if self.data:
-            self.driver.maximize_window()
-
-            self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
-            time.sleep(5)
-            username = self.data['test_customers']['username']
-            password = self.data['test_customers']['password']
-            username_input = self.driver.find_element(By.ID, "username")
-            self.assertTrue(username_input.is_displayed(), msg="Username input box is not displayed.")
-            username_input.send_keys(username)
-            time.sleep(5)
-
-            # Step 5: Enter password in the password input box
-            password_input = self.driver.find_element(By.ID, "password")
-            self.assertTrue(password_input.is_displayed(), msg="Password input box is not displayed.")
-            password_input.send_keys(password)
-            time.sleep(5)
-
-            # Step 6: Click on the login button
-            # login_button = self.driver.find_element(By.XPATH, "//button[@class='flex items-center justify-center mb-2 xs:mt-[20px] sm:mt-[20px] w-full h-[50px] sm:h-[50px] px-4 py-2 text-white bg-[#91C507] text-[13px] ff-inter font-bold outline-none rounded']")
-            login_button = self.driver.find_element(By.ID, "login")
-            self.assertTrue(login_button.is_displayed(), msg="Login Button is not displayed.")
-            login_button.click()
-            time.sleep(10)
+            self.login_helper.login()
+            # self.driver.maximize_window()
+            # self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
+            # time.sleep(5)
+            # username = self.data['test_customers']['username']
+            # password = self.data['test_customers']['password']
+            # username_input = self.driver.find_element(By.ID, "username")
+            # self.assertTrue(username_input.is_displayed(), msg="Username input box is not displayed.")
+            # username_input.send_keys(username)
+            # time.sleep(5)
+            #
+            # # Step 5: Enter password in the password input box
+            # password_input = self.driver.find_element(By.ID, "password")
+            # self.assertTrue(password_input.is_displayed(), msg="Password input box is not displayed.")
+            # password_input.send_keys(password)
+            # time.sleep(5)
+            #
+            # # Step 6: Click on the login button
+            # login_button = self.driver.find_element(By.ID, "login")
+            # self.assertTrue(login_button.is_displayed(), msg="Login Button is not displayed.")
+            # login_button.click()
+            # time.sleep(10)
             # Step 6: Select Store Admin
             store_admin = self.driver.find_element(By.XPATH, "//h4[text()='Store Admin']")
             # Check if the element is displayed
