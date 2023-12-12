@@ -7,17 +7,19 @@ class PointOfSaleTest(unittest.TestCase):
         super(PointOfSaleTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
-        # print(self.data)
+        # print("JSON Data got in Constructor: ", self.data)
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.headless = False
+        self.driver = webdriver.Chrome(options=chrome_options)
+        self.driver.maximize_window()
 
-    def tearDown(self):
-        self.driver.close()
 
     def test_point_of_sale(self):
         # Access the JSON data within your test method
         if self.data:
-            self.driver.maximize_window()
+            print("JSON Data in test method: ", self.data)
+            # self.driver.maximize_window()
             # Step 1: Open the URL
             # self.driver.get("https://test.cwcloud.in/")
             self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
@@ -172,10 +174,19 @@ class PointOfSaleTest(unittest.TestCase):
             #         create_new_customer_button = self.driver.find_element(By.XPATH, "//button[@class='ant-btn customerDetailsSubmitBtnBtn']")
             #         create_new_customer_button.click()
 
-            # Wait for the input element to be present and visible
+            # Use WebDriverWait instead of time.sleep
             wait = WebDriverWait(self.driver, 20)
-            pos_search_input = wait.until(EC.presence_of_element_located(
-                (By.XPATH, "//input[@placeholder='Search for products by code/name']")))
+
+            # Wait for the search input to be present
+            pos_search_input = wait.until(
+                EC.presence_of_element_located((By.XPATH, "//input[@placeholder='Search for products by code/name']"))
+            )
+
+
+            # Wait for the input element to be present and visible
+            # wait = WebDriverWait(self.driver, 20)
+            # pos_search_input = wait.until(EC.presence_of_element_located(
+            #     (By.XPATH, "//input[@placeholder='Search for products by code/name']")))
 
             # Now you can interact with the input element
             json_pos_search_input = self.data['test_point_of_sale']['pos_search_input']
@@ -250,3 +261,7 @@ class PointOfSaleTest(unittest.TestCase):
             flash(f"You have not passed { self.test_name.upper() } Test case.", "error")
             # print("No test data provided")
             # messagebox.showerror("Error", "You have not passed Point of Sale test case. ")
+
+
+    def tearDown(self):
+        self.driver.close()

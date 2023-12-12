@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}
-Welcome to CW Clou Test Platform [CTP]- Index
+Welcome to CW Cloud Test Platform [CTP]- Index
 {% endblock %}
 
 {% block content %}
 
-<div class="container main-container" style="width: 50%; text-align:center; margin-top: 10%;" >
+<div class="container main-container" style="width: 50%; text-align:center; margin-top: 10%;">
     <div class="row heading">
         <h1>Welcome to CW Test Platform [CTP]</h1>
-    <hr/>
+        <hr/>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -19,41 +19,53 @@ Welcome to CW Clou Test Platform [CTP]- Index
                 </div>
                 <br/>
                 <div>
-                    <button class= "btn btn-success" type="submit">Start Test</button>
+                    <label for="test_case">Select Test Case:</label>
+                    <select class="form-select" name="test_case" id="test_case">
+                        {% for test_case in test_cases %}
+                        <option value="{{ test_case }}">{{ test_case.upper() }}</option>
+                        {% endfor %}
+                    </select>
+
+
+
+                </div>
+                <br>
+                <div>
+                    <button class="btn btn-success" type="submit" name="start_test" id="start_test">Start Test</button>
                 </div>
 
             </form>
+
+
         </div>
     </div>
 
 
+    <br/> <br/>
+    <div id="msg" style="text-align: center;">
+        {% with messages = get_flashed_messages(category_filter=["success"]) %}
+        {% if messages %}
+
+        {% for message in messages %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+
+        {% endfor %}
+
+        {% endif %}
+        {% endwith %}
 
 
-<br/> <br/>
-<div id="msg"  style="text-align: center;">
-                {% with messages = get_flashed_messages(category_filter=["success"]) %}
-                {% if messages %}
+    </div>
+    <div style="text-align: center;">
+        {% with messages = get_flashed_messages(category_filter=["error"]) %}
+        {% if messages %}
 
-                {% for message in messages %}
-                <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">{{ message }}</div>
+        {% endfor %}
 
-                {% endfor %}
-
-                {% endif %}
-                {% endwith %}
-
-
-            </div>
-<div style="text-align: center;">
-    {% with messages = get_flashed_messages(category_filter=["error"]) %}
-                {% if messages %}
-
-                {% for message in messages %}
-    <div class="alert alert-danger" role="alert">{{ message }}</div>
-                {% endfor %}
-
-                {% endif %}
-                {% endwith %}
-</div>
+        {% endif %}
+        {% endwith %}
+    </div>
 </div>
 {% endblock %}
