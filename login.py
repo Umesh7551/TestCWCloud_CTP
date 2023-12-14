@@ -7,13 +7,13 @@ class Login:
         self.driver = driver
         self.data = data
         self.test_case = test_case
-
+        print(self.test_case)
     def login(self):
         self.driver.maximize_window()
         self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")
         time.sleep(5)
-        username = self.data['test_addBrand']['username']
-        password = self.data['test_addBrand']['password']
+        username = self.data['login']['username']
+        password = self.data['login']['password']
         username_input = self.driver.find_element(By.ID, "username")
         self.test_case.assertTrue(username_input.is_displayed(), msg="Username input box is not displayed.")
         username_input.send_keys(username)

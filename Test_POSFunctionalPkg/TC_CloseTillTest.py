@@ -3,7 +3,7 @@ from login import Login
 
 
 class CloseTillTest(unittest.TestCase):
-    def __init__(self, methodName='test_closeTill', data=None):
+    def __init__(self, methodName='test_close_till', data=None):
         super(CloseTillTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class CloseTillTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_closeTill(self):
+    def test_close_till(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()

@@ -3,7 +3,7 @@ from login import Login
 
 
 class SalesHistoryTest(unittest.TestCase):
-    def __init__(self, methodName='test_salesHistory', data=None):
+    def __init__(self, methodName='test_sales_history', data=None):
         super(SalesHistoryTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class SalesHistoryTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_salesHistory(self):
+    def test_sales_history(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()

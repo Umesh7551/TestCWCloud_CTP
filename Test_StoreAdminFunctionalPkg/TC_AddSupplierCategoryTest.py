@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddSupplierCategoryTest(unittest.TestCase):
-    def __init__(self, methodName='test_addSupplier_Category', data=None):
+    def __init__(self, methodName='test_add_supplier_category', data=None):
         super(AddSupplierCategoryTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddSupplierCategoryTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addSupplier_Category(self):
+    def test_add_supplier_category(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -63,19 +63,19 @@ class AddSupplierCategoryTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            business_unit = self.data['test_addSupplier_Category']['Business_Unit']
+            business_unit = self.data['test_add_supplier_category']['Business_Unit']
             input_business_unit = self.driver.find_element(By.ID, "headerTab_92EB5F77E8AB463988C4210330135C5A")
             self.assertTrue(input_business_unit.is_displayed(), msg="Business Unit input is not displayed.")
             input_business_unit.send_keys(business_unit)
             time.sleep(5)
 
-            code = self.data['test_addSupplier_Category']['Code']
+            code = self.data['test_add_supplier_category']['Code']
             input_code = self.driver.find_element(By.ID, "headerTab_BDB41292781044BC8D385C7F11249461")
             self.assertTrue(input_code.is_displayed(), msg="Code input is not displayed.")
             input_code.send_keys(code)
             time.sleep(5)
 
-            category_name = self.data['test_addSupplier_Category']['Category_Name']
+            category_name = self.data['test_add_supplier_category']['Category_Name']
             input_category_name = self.driver.find_element(By.ID, "headerTab_AA15BE6AB52C43AAAE5A12ED46012E5D")
             self.assertTrue(input_category_name.is_displayed(), msg="Category Name input is not displayed.")
             input_category_name.send_keys(category_name)

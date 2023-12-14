@@ -3,7 +3,7 @@ from login import Login
 
 
 class SalesByProductCategoryTest(unittest.TestCase):
-    def __init__(self, methodName='test_Sales_by_Product_Category', data=None):
+    def __init__(self, methodName='test_sales_by_product_category', data=None):
         super(SalesByProductCategoryTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class SalesByProductCategoryTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_Sales_by_Product_Category(self):
+    def test_sales_by_product_category(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -58,13 +58,13 @@ class SalesByProductCategoryTest(unittest.TestCase):
             sidebar_menu_sales_by_product_category.click()
             time.sleep(5)
 
-            store = self.data['test_Sales_by_Product_Report']['Store']
+            store = self.data['test_sales_by_product_category']['Store']
             input_store = self.driver.find_element(By.ID, "cs_bunit_id")
             self.assertTrue(input_store.is_displayed(), msg="Store input is not displayed.")
             input_store.send_keys(store)
             time.sleep(5)
 
-            product_category = self.data['test_Sales_by_Product_Report']['Product_Category']
+            product_category = self.data['test_sales_by_product_category']['Product_Category']
             input_product_category = self.driver.find_element(By.ID, "m_product_category_id")
             self.assertTrue(input_product_category.is_displayed(), msg="Product Category input is not displayed.")
             input_product_category.send_keys(product_category)

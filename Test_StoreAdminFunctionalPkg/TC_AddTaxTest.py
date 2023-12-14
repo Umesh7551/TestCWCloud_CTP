@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddTaxTest(unittest.TestCase):
-    def __init__(self, methodName='test_addTax', data=None):
+    def __init__(self, methodName='test_add_tax', data=None):
         super(AddTaxTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddTaxTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addTax(self):
+    def test_add_tax(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -61,37 +61,37 @@ class AddTaxTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            business_unit = self.data['test_addTax']['Business_Unit']
+            business_unit = self.data['test_add_tax']['Business_Unit']
             input_business_unit = self.driver.find_element(By.ID, "headerTab_DFD3F62756804A85B45F107FA2BDA845")
             self.assertTrue(input_business_unit.is_displayed(), msg="Business Unit input is not displayed.")
             input_business_unit.send_keys(business_unit)
             time.sleep(5)
 
-            name = self.data['test_addTax']['Name']
+            name = self.data['test_add_tax']['Name']
             input_name = self.driver.find_element(By.ID, "headerTab_7DF2751B3FFC41ECAEFF6437499439A1")
             self.assertTrue(input_name.is_displayed(), msg="Name input is not displayed.")
             input_name.send_keys(name)
             time.sleep(5)
 
-            tax_category = self.data['test_addTax']['Tax_Category']
+            tax_category = self.data['test_add_tax']['Tax_Category']
             input_tax_category = self.driver.find_element(By.ID, "headerTab_973974F051234486A457D13DCBC6F16C")
             self.assertTrue(input_tax_category.is_displayed(), msg="Tax Category input is not displayed.")
             input_tax_category.send_keys(tax_category)
             time.sleep(5)
 
-            rate = self.data['test_addTax']['Rate']
+            rate = self.data['test_add_tax']['Rate']
             input_rate = self.driver.find_element(By.ID, "headerTab_B04D8168AAA44E1A98E79D7DBC7593BB")
             self.assertTrue(input_rate.is_displayed(), msg="Rate input is not displayed.")
             input_rate.send_keys(rate)
             time.sleep(5)
 
-            parent_tax_rate = self.data['test_addTax']['Parent_Tax_Rate']
+            parent_tax_rate = self.data['test_add_tax']['Parent_Tax_Rate']
             input_parent_tax_rate = self.driver.find_element(By.ID, "headerTab_AB3C0217E29D46C0B724813E2B50D2E0")
             self.assertTrue(input_parent_tax_rate.is_displayed(), msg="Parent Tax Rate input is not displayed.")
             input_parent_tax_rate.send_keys(parent_tax_rate)
             time.sleep(5)
 
-            description = self.data['test_addTax']['Description']
+            description = self.data['test_add_tax']['Description']
             input_description = self.driver.find_element(By.ID, "headerTab_5BE3F41C5F904E6298351B164B2D21C6")
             self.assertTrue(input_description.is_displayed(), msg="Description input is not displayed.")
             input_description.send_keys(description)

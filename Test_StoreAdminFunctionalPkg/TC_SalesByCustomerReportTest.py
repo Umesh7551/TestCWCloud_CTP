@@ -3,7 +3,7 @@ from login import Login
 
 
 class SalesByCustomerReportTest(unittest.TestCase):
-    def __init__(self, methodName='test_Sales_by_Customer_Report', data=None):
+    def __init__(self, methodName='test_sales_by_customer_report', data=None):
         super(SalesByCustomerReportTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class SalesByCustomerReportTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_Sales_by_Customer_Report(self):
+    def test_sales_by_customer_report(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -58,13 +58,13 @@ class SalesByCustomerReportTest(unittest.TestCase):
             sidebar_menu_sales_by_customer_report.click()
             time.sleep(5)
 
-            store = self.data['test_Sales_by_Customer_Report']['Store']
+            store = self.data['test_sales_by_customer_report']['Store']
             input_store = self.driver.find_element(By.ID, "cs_bunit_id")
             self.assertTrue(input_store.is_displayed(), msg="Store input is not displayed.")
             input_store.send_keys(store)
             time.sleep(5)
 
-            customer = self.data['test_Sales_by_Customer_Report']['Customer']
+            customer = self.data['test_sales_by_customer_report']['Customer']
             input_customer = self.driver.find_element(By.ID, "b2c_customer_id")
             self.assertTrue(input_customer.is_displayed(), msg="Customer input is not displayed.")
             input_customer.send_keys(customer)

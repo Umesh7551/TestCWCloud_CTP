@@ -89,20 +89,67 @@ class TestAutomationApp:
                         return render_template("index.html")
                         # return jsonify({"status": "error", "message": "Please first select a JSON file!"})
 
-        # @self.app.route('/get_test_case_data', methods=['POST'])
-        # def get_test_case_data():
-        #     if request.method == 'POST':
-        #         test_case_name = request.form['test_case']
-        #         # Assuming your JSON files are stored in a directory named 'test_data'
-        #         # file_path = f'test_data/{test_case_name.lower()}.json'
-        #         file_path = 'testdata.json'
-        #         try:
-        #             with open(file_path, 'r') as json_file:
-        #                 data = json.load(json_file)
-        #                 # print(data)
-        #             return jsonify({'status': 'success', 'data': data})
-        #         except FileNotFoundError:
-        #             return jsonify({'status': 'error', 'message': 'JSON file not found'})
+        @app.route('/get_data/<test_case>')
+        def get_data(test_case):
+            # Get the optional 'file_name' parameter from the query string
+            file_name = request.args.get('file_name', 'default_filename.json')
+
+            # Construct the path to the JSON file based on the provided file name
+            json_file_path = os.path.join(os.path.dirname(__file__), file_name)
+
+            if os.path.exists(json_file_path):
+                with open(json_file_path, 'r') as json_file:
+                    data = json.load(json_file)
+
+                    if 'test_' + test_case in data:
+                        return jsonify(data['test_' + test_case])
+                    else:
+                        return jsonify({'error': 'Test case not found'})
+            else:
+                return jsonify({'error': 'JSON file not found'})
+
+
+
+        # @app.route('/get_data/<test_case>')
+        # def get_data(test_case):
+        #     # Assuming data.json is in the 'json_data' directory relative to app.py
+        #     # json_file_path = os.path.join(os.path.dirname(__file__), 'testdata.json')
+        #
+        #     # Assuming data.json is a file in the same directory as app.py
+        #     with open('testdata.json', 'r') as json_file:
+        #     # with open(json_file_path, 'r') as json_file:
+        #         data = json.load(json_file)
+        #         # print(data)
+        #     if 'test_' + test_case in data:
+        #         # print(test_case)
+        #         test_case = 'test_' + test_case
+        #         # print(test_case)
+        #
+        #         return jsonify(data[test_case])
+        #     else:
+        #         return jsonify({'error': 'Test case not found'})
+
+
+        # @app.route('/update_data/<test_case>', methods=['POST'])
+        # def update_data(test_case):
+        #     # Load existing data from the JSON file
+        #     with open('testdata.json', 'r') as json_file:
+        #         existing_data = json.load(json_file)
+        #         if 'test_' + test_case in existing_data:
+        #             test_case = 'test_' + test_case
+        #             # Update the data with the submitted form data
+        #             form_data = request.get_json()
+        #             existing_data[test_case].update(form_data)
+        #
+        #     # Save the updated data back to the JSON file
+        #     with open('testdata.json', 'w') as json_file:
+        #         json.dump(existing_data, json_file, indent=2)
+        #
+        #     # return jsonify({'message': 'Data updated successfully'})
+        #     flash("Data updated successfully", "modal_success")
+        #     return render_template("index.html")
+            # return jsonify({"status": "success", "message": "Data updated successfully"})
+            # return jsonify({'message': 'Data updated successfully'})
 
 
 app = Flask(__name__)

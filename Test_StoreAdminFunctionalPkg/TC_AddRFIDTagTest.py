@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddRFIDTagTest(unittest.TestCase):
-    def __init__(self, methodName='test_addRFIDTag', data=None):
+    def __init__(self, methodName='test_add_rfid_tag', data=None):
         super(AddRFIDTagTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddRFIDTagTest(unittest.TestCase):
         self.driver.close()
         self.login_helper = Login(self.driver, self.data, self)
 
-    def test_addRFIDTag(self):
+    def test_add_rfid_tag(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -63,79 +63,79 @@ class AddRFIDTagTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            product_code = self.data["test_addRFIDTag"]["Product Code"]
+            product_code = self.data["test_add_rfid_tag"]["Product_Code"]
             input_product_code = self.driver.find_element(By.ID, "headerTab_6BEBA63D3D014D9CBF0C74F7E5D0FDC9")
             self.assertTrue(input_product_code.is_displayed(), msg="Product Code input is not displayed.")
             input_product_code.send_keys(product_code)
             time.sleep(5)
 
-            product = self.data["test_addRFIDTag"]["Product"]
+            product = self.data["test_add_rfid_tag"]["Product"]
             input_product = self.driver.find_element(By.ID, "headerTab_B456D14F3DC54EFE8378FFE88597149A")
             self.assertTrue(input_product.is_displayed(), msg="Product Input is not displayed.")
             input_product.send_keys(product)
             time.sleep(5)
 
-            tag_value = self.data["test_addRFIDTag"]["Tag Value"]
+            tag_value = self.data["test_add_rfid_tag"]["Tag_Value"]
             input_tag_value = self.driver.find_element(By.ID, "headerTab_C048011FA52F409DB461EAE659DD004F")
             self.assertTrue(input_tag_value.is_displayed(), msg="Tag Value Input is not displayed.")
             input_tag_value.send_keys(tag_value)
             time.sleep(5)
 
-            tag_type = self.data["test_addRFIDTag"]["Tag Type"]
+            tag_type = self.data["test_add_rfid_tag"]["Tag_Type"]
             input_tag_type = self.driver.find_element(By.ID, "headerTab_9E89133760594284B76F9A044408EC10")
             self.assertTrue(input_tag_type.is_displayed(), msg="Tag Type input is not displayed.")
             input_tag_type.send_keys(tag_type)
             time.sleep(5)
 
-            tagging_date = self.data["test_addRFIDTag"]["Tagging Date"]
+            tagging_date = self.data["test_add_rfid_tag"]["Tagging_Date"]
             input_tagging_date = self.driver.find_element(By.ID, "headerTab_B70961444E0A45938756807DDCE4E883")
             self.assertTrue(input_tagging_date.is_displayed(), msg="Tagging Date input is not displayed.")
             input_tagging_date.send_keys(tagging_date)
             time.sleep(5)
 
-            batch_number = self.data["test_addRFIDTag"]["Batch Number"]
+            batch_number = self.data["test_add_rfid_tag"]["Batch_Number"]
             input_batch_number = self.driver.find_element(By.ID, "headerTab_3676DE90C3D542D0A0E69F906666B0FC")
             self.assertTrue(input_batch_number.is_displayed(), msg="Batch Number input box is not displayed.")
             input_batch_number.send_keys(batch_number)
             time.sleep(5)
 
-            batch = self.data["test_addRFIDTag"]["Batch"]
+            batch = self.data["test_add_rfid_tag"]["Batch"]
             input_batch = self.driver.find_element(By.ID, "headerTab_34531C4CC21A41CCB107FDCCE8A4020E")
             self.assertTrue(input_batch.is_displayed(), msg="Batch input is not displayed.")
             input_batch.send_keys(batch)
             time.sleep(5)
 
-            location = self.data["test_addRFIDTag"]["Location"]
+            location = self.data["test_add_rfid_tag"]["Location"]
             input_location = self.driver.find_element(By.ID, "headerTab_79D49C5DBFB34C898BC5479E73A09BFF")
             self.assertTrue(input_location.is_displayed(), msg="Location input is not displayed.")
             input_location.send_keys(location)
             time.sleep(5)
 
-            tag_status = self.data["test_addRFIDTag"]["Tag Status"]
+            tag_status = self.data["test_add_rfid_tag"]["Tag_Status"]
             input_tag_status = self.driver.find_element(By.ID, "headerTab_A4335C2B76D94CE5BEAAC5814AF3401F")
             self.assertTrue(input_tag_status.is_displayed(), msg="Tag Status input is not displayed.")
             input_tag_status.send_keys(tag_status)
             time.sleep(5)
 
-            last_scanned_date = self.data["test_addRFIDTag"]["Last Scanned Date"]
+            last_scanned_date = self.data["test_add_rfid_tag"]["Last_Scanned_Date"]
             input_last_scanned_date = self.driver.find_element(By.ID, "headerTab_8D866234F3374BC3A8CF3CBF360C3239")
             self.assertTrue(input_last_scanned_date.is_displayed(), msg="Last Scanned Date input is not displayed.")
             input_last_scanned_date.send_keys(last_scanned_date)
             time.sleep(5)
 
-            scanned_by = self.data["test_addRFIDTag"]["Scanned By"]
+            scanned_by = self.data["test_add_rfid_tag"]["Scanned_By"]
             input_scanned_by = self.driver.find_element(By.ID, "headerTab_7273A3F525634450B1703500ED870758")
             self.assertTrue(input_scanned_by.is_displayed(), msg="Scanned By input is not displayed.")
             input_scanned_by.send_keys(scanned_by)
             time.sleep(5)
 
-            expiry_date = self.data["test_addRFIDTag"]["Expiry Date"]
+            expiry_date = self.data["test_add_rfid_tag"]["Expiry_Date"]
             input_expiry_date = self.driver.find_element(By.ID, "headerTab_1288173DC4FC43FFA40D5638DB6DAA67")
             self.assertTrue(input_expiry_date.is_displayed(), msg="Expiry Date input is not displayed.")
             input_expiry_date.send_keys(expiry_date)
             time.sleep(5)
 
-            custom_attributes = self.data["test_addRFIDTag"]["Custom Attributes"]
+            custom_attributes = self.data["test_add_rfid_tag"]["Custom_Attributes"]
             input_custom_attributes = self.driver.find_element(By.ID, "headerTab_1BFCB53588FF4DFD86E112490D6335B0")
             self.assertTrue(input_custom_attributes.is_displayed(), msg="Custom Attributes input is not displayed.")
             input_custom_attributes.send_keys(custom_attributes)

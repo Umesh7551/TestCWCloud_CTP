@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddProductsTest(unittest.TestCase):
-    def __init__(self, methodName='test_addProducts', data=None):
+    def __init__(self, methodName='test_add_products', data=None):
         super(AddProductsTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddProductsTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addProducts(self):
+    def test_add_products(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -40,39 +40,38 @@ class AddProductsTest(unittest.TestCase):
             # login_button.click()
             # time.sleep(10)
             # Step 6: Select POS
-            # pos = self.driver.find_element(By.XPATH, "//article[@class='bg-white mb-2 sm:mb-0 md:w-[180px] lg:w-[180px] sm:w-[200px] xs:w-full rounded-[12px] px-3 py-3 mr-2 sm:mr-4 justify-between relative'][1]")
             store_admin = self.driver.find_element(By.XPATH, "//h4[text()='Store Admin']")
             # Check if the element is displayed
             self.assertTrue(store_admin.is_displayed(), msg="Store Admin is not displayed")
             store_admin.click()
             time.sleep(10)
 
-            menu_products = self.driver.find_element(By.XPATH, "//span[text()='Products']")
-            self.assertTrue(menu_products.is_displayed(), msg="Products Menu is not Displayed")
-            menu_products.click()
+            # menu_products = self.driver.find_element(By.XPATH, "//span[text()='Products']")
+            # self.assertTrue(menu_products.is_displayed(), msg="Products Menu is not Displayed")
+            # menu_products.click()
 
-            sidebar_menu_product = self.driver.find_element(By.XPATH, "//span[text()='Product']")
-            self.assertTrue(sidebar_menu_product.is_displayed(), msg="Product menu is not displayed.")
-            sidebar_menu_product.click()
-            time.sleep(5)
+            # sidebar_menu_product = self.driver.find_element(By.XPATH, "//span[text()='Product']")
+            # self.assertTrue(sidebar_menu_product.is_displayed(), msg="Product menu is not displayed.")
+            # sidebar_menu_product.click()
+            # time.sleep(5)
 
             add_new_button = self.driver.find_element(By.XPATH, "//button[@class='ant-btn ant-btn-primary']")
             self.assertTrue(add_new_button.is_displayed(), msg="Add New Button is not displayed")
             add_new_button.click()
             time.sleep(10)
 
-            product_info = self.data["test_addProducts"]["product_info"]
-            product_name = product_info["Product Name"]
-            product_category = product_info["Product Category"]
-            uom = product_info["UOM"]
-            tax_category = product_info["Tax Category"]
-            sales_price = product_info["Sales Price"]
-            list_price = product_info["List Price"]
-            purchase_price = product_info["Purchase Price"]
-            upc = product_info["UPC"]
-            product_description = product_info["Product Description"]
-            image_url = product_info["Image URL"]
-            product_catalogue = product_info["Product Catalogue"]
+            # product_info = self.data["test_add_products"]["product_info"]
+            product_name = self.data["test_add_products"]["Product_Name"]
+            product_category = self.data["test_add_products"]["Product_Category"]
+            uom = self.data["test_add_products"]["UOM"]
+            tax_category = self.data["test_add_products"]["Tax_Category"]
+            sales_price = self.data["test_add_products"]["Sales_Price"]
+            list_price = self.data["test_add_products"]["List_Price"]
+            purchase_price = self.data["test_add_products"]["Purchase_Price"]
+            upc = self.data["test_add_products"]["UPC"]
+            product_description = self.data["test_add_products"]["Product_Description"]
+            image_url = self.data["test_add_products"]["Image_URL"]
+            product_catalogue = self.data["test_add_products"]["Product_Catalogue"]
 
             input_product_name = self.driver.find_element(By.ID, "headerTab_05DF4D54F56544E7BB875B7CFB935C8C")
             self.assertTrue(input_product_name.is_displayed(), msg="Product Name Input box is not displayed")

@@ -3,7 +3,7 @@ from login import Login
 
 
 class SalesByProductReportTest(unittest.TestCase):
-    def __init__(self, methodName='test_Sales_by_Product_Report', data=None):
+    def __init__(self, methodName='test_sales_by_product_report', data=None):
         super(SalesByProductReportTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class SalesByProductReportTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_Sales_by_Product_Report(self):
+    def test_sales_by_product_report(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -58,13 +58,13 @@ class SalesByProductReportTest(unittest.TestCase):
             sidebar_menu_sales_by_product_report.click()
             time.sleep(5)
 
-            store = self.data['test_Sales_by_Product_Report']['Store']
+            store = self.data['test_sales_by_product_report']['Store']
             input_store = self.driver.find_element(By.ID, "cs_bunit_id")
             self.assertTrue(input_store.is_displayed(), msg="Store input is not displayed.")
             input_store.send_keys(store)
             time.sleep(5)
 
-            product = self.data['test_Sales_by_Product_Report']['Product']
+            product = self.data['test_sales_by_product_report']['Product']
             input_product = self.driver.find_element(By.ID, "m_product_id")
             self.assertTrue(input_product.is_displayed(), msg="Product input is not displayed.")
             input_product.send_keys(product)

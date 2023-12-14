@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddPricingRulesTest(unittest.TestCase):
-    def __init__(self, methodName='test_addPricing_Rules', data=None):
+    def __init__(self, methodName='test_add_pricing_rules', data=None):
         super(AddPricingRulesTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddPricingRulesTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addPricing_Rules(self):
+    def test_add_pricing_rules(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -64,105 +64,105 @@ class AddPricingRulesTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            type = self.data["test_addPricing_Rules"]["Type"]
+            type = self.data["test_add_pricing_rules"]["Type"]
             input_type = self.driver.find_element(By.ID, "headerTab_B3A125482C994AD784298943261113AF")
             self.assertTrue(input_type.is_displayed(), msg="Type input is not displayed.")
             input_type.send_keys(type)
             time.sleep(5)
 
-            name = self.data["test_addPricing_Rules"]["Name"]
+            name = self.data["test_add_pricing_rules"]["Name"]
             input_name = self.driver.find_element(By.ID, "headerTab_1E2751866DC846728765C9C883C79E6A")
             self.assertTrue(input_name.is_displayed(), msg="Name input is not displayed.")
             input_name.send_keys(name)
             time.sleep(5)
 
-            printed_name = self.data["test_addPricing_Rules"]["Printed_Name"]
+            printed_name = self.data["test_add_pricing_rules"]["Printed_Name"]
             input_printed_name = self.driver.find_element(By.ID, "headerTab_15D5EA483D2A43D794E3FF500D8D9DA3")
             self.assertTrue(input_printed_name.is_displayed(), msg="Printed Name input is not displayed.")
             input_printed_name.send_keys(printed_name)
             time.sleep(5)
 
-            description = self.data["test_addPricing_Rules"]["Description"]
+            description = self.data["test_add_pricing_rules"]["Description"]
             input_description = self.driver.find_element(By.ID, "headerTab_3A6C9325FFEC42ACAC9E1BE83248F789")
             self.assertTrue(input_description.is_displayed(), msg="Description input is not displayed.")
             input_description.send_keys(description)
             time.sleep(5)
 
-            start_date = self.data["test_addPricing_Rules"]["Start_Date"]
+            start_date = self.data["test_add_pricing_rules"]["Start_Date"]
             input_start_date = self.driver.find_element(By.ID, "headerTab_6184E60E039B474B96D37D32A6C3C70C")
             self.assertTrue(input_start_date.is_displayed(), msg="Start Date input is not displayed.")
             input_start_date.send_keys(start_date)
             time.sleep(5)
 
-            end_date = self.data["test_addPricing_Rules"]["End_Date"]
+            end_date = self.data["test_add_pricing_rules"]["End_Date"]
             input_end_date = self.driver.find_element(By.ID, "headerTab_6184E60E039B474B96D37D32A6C3C70C")
             self.assertTrue(input_end_date.is_displayed(), msg="End Date input is not displayed.")
             input_end_date.send_keys(end_date)
             time.sleep(5)
 
-            coupon_expiry_date = self.data["test_addPricing_Rules"]["Coupon_Expiry_Date"]
+            coupon_expiry_date = self.data["test_add_pricing_rules"]["Coupon_Expiry_Date"]
             input_coupon_expiry_date = self.driver.find_element(By.ID, "headerTab_A2511C5ED6C64CE393C940A0566CA3C5")
             self.assertTrue(input_coupon_expiry_date.is_displayed(), msg="Coupon Expiry Date input is not displayed.")
             input_coupon_expiry_date.send_keys(coupon_expiry_date)
             time.sleep(5)
 
-            discount_type = self.data["test_addPricing_Rules"]["Discount_Type"]
+            discount_type = self.data["test_add_pricing_rules"]["Discount_Type"]
             input_discount_type = self.driver.find_element(By.ID, "headerTab_81CA40B331EE47D794C5E67F5A8047BA")
             self.assertTrue(input_discount_type.is_displayed(),
                             msg="Discount Type input is not displayed.")
             input_discount_type.send_keys(discount_type)
             time.sleep(5)
 
-            no_of_coupons = self.data["test_addPricing_Rules"]["No_of_Coupons"]
+            no_of_coupons = self.data["test_add_pricing_rules"]["No_of_Coupons"]
             input_no_of_coupons = self.driver.find_element(By.ID, "headerTab_3FFFB46E755C48E188486B12F71AD653")
             self.assertTrue(input_no_of_coupons.is_displayed(),
                             msg="No of Coupons input is not displayed.")
             input_no_of_coupons.send_keys(no_of_coupons)
             time.sleep(5)
 
-            gift_voucher_type = self.data["test_addPricing_Rules"]["Gift_Voucher_Type"]
+            gift_voucher_type = self.data["test_add_pricing_rules"]["Gift_Voucher_Type"]
             input_gift_voucher_type = self.driver.find_element(By.ID, "headerTab_E0B20B2826D34F1DB24B98163F1870D1")
             self.assertTrue(input_gift_voucher_type.is_displayed(),
                             msg="Gift Voucher Type input is not displayed.")
             input_gift_voucher_type.send_keys(gift_voucher_type)
             time.sleep(5)
 
-            minimum_qty = self.data["test_addPricing_Rules"]["Minimum_Qty"]
+            minimum_qty = self.data["test_add_pricing_rules"]["Minimum_Qty"]
             input_minimum_qty = self.driver.find_element(By.ID, "headerTab_B7CFAF12181644B6A38196DEA23700E1")
             self.assertTrue(input_minimum_qty.is_displayed(),
                             msg="Minimum Quantity input is not displayed.")
             input_minimum_qty.send_keys(minimum_qty)
             time.sleep(5)
 
-            maximum_qty = self.data["test_addPricing_Rules"]["Maximum_Qty"]
+            maximum_qty = self.data["test_add_pricing_rules"]["Maximum_Qty"]
             input_maximum_qty = self.driver.find_element(By.ID, "headerTab_B7CFAF12181644B6A38196DEA23700E1")
             self.assertTrue(input_maximum_qty.is_displayed(),
                             msg="Maximum Quantity input is not displayed.")
             input_maximum_qty.send_keys(maximum_qty)
             time.sleep(5)
 
-            discount_x_qty = self.data["test_addPricing_Rules"]["Discount_X_Qty"]
+            discount_x_qty = self.data["test_add_pricing_rules"]["Discount_X_Qty"]
             input_discount_x_qty = self.driver.find_element(By.ID, "headerTab_72C66F3E59114363BEE65D4595D3E2B7")
             self.assertTrue(input_discount_x_qty.is_displayed(),
                             msg="Discount X Quantity input is not displayed.")
             input_discount_x_qty.send_keys(discount_x_qty)
             time.sleep(5)
 
-            discount_y_qty = self.data["test_addPricing_Rules"]["Discount_Y_Qty"]
+            discount_y_qty = self.data["test_add_pricing_rules"]["Discount_Y_Qty"]
             input_discount_y_qty = self.driver.find_element(By.ID, "headerTab_C5466B6E083D4E52847868F792FB1B7C")
             self.assertTrue(input_discount_y_qty.is_displayed(),
                             msg="Discount Y Quantity input is not displayed.")
             input_discount_y_qty.send_keys(discount_y_qty)
             time.sleep(5)
 
-            minimum_bill_amount = self.data["test_addPricing_Rules"]["Minimum_Bill_Amount"]
+            minimum_bill_amount = self.data["test_add_pricing_rules"]["Minimum_Bill_Amount"]
             input_minimum_bill_amount = self.driver.find_element(By.ID, "headerTab_C7CCB554D5CD4D40ACA88FC28C8FFC6C")
             self.assertTrue(input_minimum_bill_amount.is_displayed(),
                             msg="Minimum Bill Amount input is not displayed.")
             input_minimum_bill_amount.send_keys(minimum_bill_amount)
             time.sleep(5)
 
-            maximum_bill_amount = self.data["test_addPricing_Rules"]["Maximum_Bill_Amount"]
+            maximum_bill_amount = self.data["test_add_pricing_rules"]["Maximum_Bill_Amount"]
             input_maximum_bill_amount = self.driver.find_element(By.ID,
                                                                  "headerTab_94738DCF997A4F16AEED3069A43604AF")
             self.assertTrue(input_maximum_bill_amount.is_displayed(),
@@ -170,7 +170,7 @@ class AddPricingRulesTest(unittest.TestCase):
             input_maximum_bill_amount.send_keys(maximum_bill_amount)
             time.sleep(5)
 
-            pos_sales_type = self.data["test_addPricing_Rules"]["POS_Sales_Type"]
+            pos_sales_type = self.data["test_add_pricing_rules"]["POS_Sales_Type"]
             input_pos_sales_type = self.driver.find_element(By.ID,
                                                             "headerTab_318C3C5AA0034EE2B8D0FB8589D85B83")
             self.assertTrue(input_pos_sales_type.is_displayed(),
@@ -178,7 +178,7 @@ class AddPricingRulesTest(unittest.TestCase):
             input_pos_sales_type.send_keys(pos_sales_type)
             time.sleep(5)
 
-            fixed_unit_price = self.data["test_addPricing_Rules"]["Fixed_Unit_Price"]
+            fixed_unit_price = self.data["test_add_pricing_rules"]["Fixed_Unit_Price"]
             input_fixed_unit_price = self.driver.find_element(By.ID,
                                                               "headerTab_42B7DDEF58614DB4AE3C1F65BA214E4E")
             self.assertTrue(input_fixed_unit_price.is_displayed(),

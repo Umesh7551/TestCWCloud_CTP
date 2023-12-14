@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddBrandTest(unittest.TestCase):
-    def __init__(self, methodName='test_addBrand', data=None):
+    def __init__(self, methodName='test_add_brand', data=None):
         super(AddBrandTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddBrandTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addBrand(self):
+    def test_add_brand(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -63,7 +63,7 @@ class AddBrandTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            brand_name = self.data["test_addBrand"]["Brand Name"]
+            brand_name = self.data["test_add_brand"]["Brand_Name"]
             input_brand_name = self.driver.find_element(By.ID, "headerTab_406034723F6E4DC4BC8352D364E3A188")
             self.assertTrue(input_brand_name.is_displayed(), msg="Brand Name input box is not displayed.")
             input_brand_name.send_keys(brand_name)

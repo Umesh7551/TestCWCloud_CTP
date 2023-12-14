@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddImageLibraryTest(unittest.TestCase):
-    def __init__(self, methodName='test_addImageLibrary', data=None):
+    def __init__(self, methodName='test_add_image_library', data=None):
         super(AddImageLibraryTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddImageLibraryTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addImageLibrary(self):
+    def test_add_image_library(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -64,19 +64,19 @@ class AddImageLibraryTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            image_name = self.data["test_addImageLibrary"]["Image"]
+            image_name = self.data["test_add_image_library"]["Image"]
             input_image_name = self.driver.find_element(By.ID, "")
             self.assertTrue(input_image_name.is_displayed(), msg="Image Name input box is not displayed.")
             input_image_name.send_keys(image_name)
             time.sleep(5)
 
-            description = self.data["test_addImageLibrary"]["Description"]
+            description = self.data["test_add_image_library"]["Description"]
             input_description = self.driver.find_element(By.ID, "headerTab_9D891ED6164E4CEDBEA4B3A8C078FFD6")
             self.assertTrue(input_description.is_displayed(), msg="Description input box is not displayed.")
             input_description.send_keys(description)
             time.sleep(5)
 
-            image_group = self.data["test_addImageLibrary"]["Image Group"]
+            image_group = self.data["test_add_image_library"]["Image_Group"]
             input_image_group = self.driver.find_element(By.ID, "headerTab_E7E96A631EE44F3FB601A462F70B2AD3")
             self.assertTrue(input_image_group.is_displayed(), msg="Image Group Combo box is not displayed.")
             input_image_group.send_keys(image_group)

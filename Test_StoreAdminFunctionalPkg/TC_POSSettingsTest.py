@@ -73,7 +73,7 @@ class PosSettingsTest(unittest.TestCase):
                 enable_card_integration.click()
 
             # Check if input_payment_combo_box is displayed
-            payment_combo_box = self.data["test_POS_Settings"]["Payment_Mode"]
+            payment_combo_box = self.data["test_pos_settings"]["Payment_Mode"]
             input_payment_combo_box = self.driver.find_element(By.ID, "mainForm_enableCardIntegrationValue")
             self.assertTrue(input_payment_combo_box.is_displayed(), msg="Payment Combo Box is not displayed.")
             input_payment_combo_box.send_keys(payment_combo_box)
@@ -83,7 +83,7 @@ class PosSettingsTest(unittest.TestCase):
             if not customer_search_check.is_selected():
                 customer_search_check.click()
 
-            customer_search = self.data["test_POS_Settings"]["Customer_Search"]
+            customer_search = self.data["test_pos_settings"]["Customer_Search"]
             customer_search_combo = self.driver.find_element(By.ID, "mainForm_showCustomerSearchValue")
             self.assertTrue(customer_search_combo.is_displayed(), msg="Customer Search Combo is not displayed.")
             customer_search_combo.send_keys()

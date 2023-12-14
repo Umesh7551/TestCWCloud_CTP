@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddReturnReasonsTest(unittest.TestCase):
-    def __init__(self, methodName='test_addReturn_Reasons', data=None):
+    def __init__(self, methodName='test_add_return_reasons', data=None):
         super(AddReturnReasonsTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddReturnReasonsTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addReturn_Reasons(self):
+    def test_add_return_reasons(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -62,13 +62,13 @@ class AddReturnReasonsTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            search_key = self.data["test_addReturn_Reasons"]["Search_Key"]
+            search_key = self.data["test_add_return_reasons"]["Search_Key"]
             input_search_key = self.driver.find_element(By.ID, "headerTab_B7E5EDABEBC744D4A0D3A833976D9AB5")
             self.assertTrue(input_search_key.is_displayed(), msg="Search Key input is not displayed.")
             input_search_key.send_keys(search_key)
             time.sleep(5)
 
-            name = self.data["test_addReturn_Reasons"]["Name"]
+            name = self.data["test_add_return_reasons"]["Name"]
             input_name = self.driver.find_element(By.ID, "headerTab_DF1455B50DAF4766BDCE2E3D2A200DC5")
             self.assertTrue(input_name.is_displayed(), msg="Name input is not displayed.")
             input_name.send_keys(name)
@@ -81,7 +81,7 @@ class AddReturnReasonsTest(unittest.TestCase):
             else:
                 pass
 
-            description = self.data["test_addReturn_Reasons"]["Description"]
+            description = self.data["test_add_return_reasons"]["Description"]
             input_description = self.driver.find_element(By.ID, "headerTab_A56B505BC1BE4FD2B7464AE36B055143")
             self.assertTrue(input_description.is_displayed(), msg="Description input is not displayed.")
             input_description.send_keys(description)

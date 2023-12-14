@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddCustomersTest(unittest.TestCase):
-    def __init__(self, methodName='test_customers', data=None):
+    def __init__(self, methodName='test_add_customers', data=None):
         super(AddCustomersTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddCustomersTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_customers(self):
+    def test_add_customers(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -63,7 +63,7 @@ class AddCustomersTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            registered_store = self.data["test_customers"]["Registered Store"]
+            registered_store = self.data["test_add_customers"]["Registered_Store"]
             input_registered_store = self.driver.find_element(By.ID, "headerTab_2353CF69FBB94A8C8C2F9C55F785B8CF")
             self.assertTrue(input_registered_store.is_displayed(), msg="Registered Store input is not displayed.")
             input_registered_store.send_keys(registered_store)
@@ -75,85 +75,85 @@ class AddCustomersTest(unittest.TestCase):
             else:
                 active_check.click()
 
-            firstname = self.data["test_customers"]["First Name"]
+            firstname = self.data["test_add_customers"]["First_Name"]
             input_firstname = self.driver.find_element(By.ID, "headerTab_1B540617B4374162BCCE219EF7D15365")
             self.assertTrue(input_firstname.is_displayed(), msg="First Name input is not displayed.")
             input_firstname.send_keys(firstname)
             time.sleep(5)
 
-            name = self.data["test_customers"]["Name"]
+            name = self.data["test_add_customers"]["Name"]
             input_name = self.driver.find_element(By.ID, "headerTab_3510E858B362493EBE47062864E0001B")
             self.assertTrue(input_name.is_displayed(), msg="Name input is not displayed.")
             input_name.send_keys(name)
             time.sleep(5)
 
-            lastname = self.data["test_customers"]["Last Name"]
+            lastname = self.data["test_add_customers"]["Last_Name"]
             input_lastname = self.driver.find_element(By.ID, "headerTab_F73EDEEFC2454F2D98AAB99219032244")
             self.assertTrue(input_lastname.is_displayed(), msg="Last Name input is not displayed.")
             input_lastname.send_keys(lastname)
             time.sleep(5)
 
-            mobile = self.data["test_customers"]["Mobile No"]
+            mobile = self.data["test_add_customers"]["Mobile_No"]
             input_mobile = self.driver.find_element(By.ID, "headerTab_90DDABD2BFD1446B8B6142A3D88D5728")
             self.assertTrue(input_mobile.is_displayed(), msg="Mobile input is not displayed.")
             input_mobile.send_keys(mobile)
             time.sleep(5)
 
-            country_code = self.data["test_customers"]["Country Code"]
+            country_code = self.data["test_add_customers"]["Country_Code"]
             input_country_code = self.driver.find_element(By.ID, "headerTab_4D66FA76BD134195B307D7BF15B530BA")
             self.assertTrue(input_country_code.is_displayed(), msg="Country Code input is not displayed.")
             input_country_code.send_keys(country_code)
             time.sleep(5)
 
-            email = self.data["test_customers"]["Email"]
+            email = self.data["test_add_customers"]["Email"]
             input_email = self.driver.find_element(By.ID, "headerTab_8B96C59CACE54500AB145D9DCC5F3107")
             self.assertTrue(input_email.is_displayed(), msg="Email input is not displayed.")
             input_email.send_keys(email)
             time.sleep(5)
 
-            pincode = self.data["test_customers"]["Pincode"]
+            pincode = self.data["test_add_customers"]["Pincode"]
             input_pincode = self.driver.find_element(By.ID, "headerTab_4C336FDDC5FE4C2694B10943C144A312")
             self.assertTrue(input_pincode.is_displayed(), msg="Pincode input is not displayed.")
             input_pincode.send_keys(pincode)
             time.sleep(5)
 
-            default_customer = self.data["test_customers"]["Default Customer"]
+            default_customer = self.data["test_add_customers"]["Default_Customer"]
             input_default_customer = self.driver.find_element(By.ID, "headerTab_883F14CAFEF041AFB0F51E88A76F42F1")
             self.assertTrue(input_default_customer.is_displayed(), msg="Default Customer input is not displayed.")
             input_default_customer.send_keys(default_customer)
             time.sleep(5)
 
-            credit_limit = self.data["test_customers"]["Credit Limit"]
+            credit_limit = self.data["test_add_customers"]["Credit_Limit"]
             input_credit_limit = self.driver.find_element(By.ID, "headerTab_B8CFAF37257D4E90A726318ACD695F16")
             self.assertTrue(input_credit_limit.is_displayed(), msg="Credit Limit input is not displayed.")
             input_credit_limit.send_keys(credit_limit)
             time.sleep(5)
 
-            payment_method = self.data["test_customers"]["Payment Method"]
+            payment_method = self.data["test_add_customers"]["Payment_Method"]
             input_payment_method = self.driver.find_element(By.ID, "headerTab_CDBFB8C224F4448BB6595CA41DA0FDE9")
             self.assertTrue(input_payment_method.is_displayed(), msg="Payment Method input is not displayed.")
             input_payment_method.send_keys(payment_method)
             time.sleep(5)
 
-            loyalty_level = self.data["test_customers"]["Loyalty Level"]
+            loyalty_level = self.data["test_add_customers"]["Loyalty_Level"]
             input_loyalty_level = self.driver.find_element(By.ID, "headerTab_F7AE3393AA5B4A5B8C81A3086846F393")
             self.assertTrue(input_loyalty_level.is_displayed(), msg="Loyalty Level input is not displayed.")
             input_loyalty_level.send_keys(loyalty_level)
             time.sleep(5)
 
-            loyalty_balance = self.data["test_customers"]["Loyalty Balance"]
+            loyalty_balance = self.data["test_add_customers"]["Loyalty_Balance"]
             input_loyalty_balance = self.driver.find_element(By.ID, "headerTab_4489B4824A1C4F6F9682A063E332511D")
             self.assertTrue(input_loyalty_balance.is_displayed(), msg="Loyalty balance input is not displayed.")
             input_loyalty_balance.send_keys(loyalty_balance)
             time.sleep(5)
 
-            last_visit_date = self.data["test_customers"]["Last Visit Date"]
+            last_visit_date = self.data["test_add_customers"]["Last_Visit_Date"]
             input_last_visit_date = self.driver.find_element(By.ID, "headerTab_A0CC26764EEC4045AC22FEA60F7E99F4")
             self.assertTrue(input_last_visit_date.is_displayed(), msg="Last Visit Date input is not displayed.")
             input_last_visit_date.send_keys(last_visit_date)
             time.sleep(5)
 
-            last_billing_amount = self.data["test_customers"]["Last Billing Amount"]
+            last_billing_amount = self.data["test_add_customers"]["Last_Billing_Amount"]
             input_last_billing_amount = self.driver.find_element(By.ID,
                                                                  "headerTab_E36A6F84E8974643B783EAC340FE89F8")
             self.assertTrue(input_last_billing_amount.is_displayed(),
@@ -161,7 +161,7 @@ class AddCustomersTest(unittest.TestCase):
             input_last_billing_amount.send_keys(last_billing_amount)
             time.sleep(5)
 
-            average_basket_value = self.data["test_customers"]["Average Basket Value"]
+            average_basket_value = self.data["test_add_customers"]["Average_Basket_Value"]
             input_average_basket_value = self.driver.find_element(By.ID,
                                                                   "headerTab_EC71BA75384B471981B11D3CBB9773A3")
             self.assertTrue(input_average_basket_value.is_displayed(),
@@ -169,7 +169,7 @@ class AddCustomersTest(unittest.TestCase):
             input_average_basket_value.send_keys(average_basket_value)
             time.sleep(5)
 
-            no_of_visits = self.data["test_customers"]["No of Visits"]
+            no_of_visits = self.data["test_add_customers"]["No_of_Visits"]
             input_no_of_visits = self.driver.find_element(By.ID,
                                                           "headerTab_8F3DFA5E17B94CAAB49A239F296E35D5")
             self.assertTrue(input_no_of_visits.is_displayed(),

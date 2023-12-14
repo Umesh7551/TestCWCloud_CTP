@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddProductCatalogueTest(unittest.TestCase):
-    def __init__(self, methodName='test_addProductCatalogue', data=None):
+    def __init__(self, methodName='test_add_product_catalogue', data=None):
         super(AddProductCatalogueTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddProductCatalogueTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addProductCatalogue(self):
+    def test_add_product_catalogue(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -63,7 +63,7 @@ class AddProductCatalogueTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            product_catalogue = self.data['test_addProductCatalogue']['Product Catalogue Name']
+            product_catalogue = self.data['test_add_product_catalogue']['Product_Catalogue_Name']
             input_product_catalogue = self.driver.find_element(By.ID, "headerTab_02C771DA4EAC43B1B4DFA1B26CDB05A7")
             self.assertTrue(input_product_catalogue.is_displayed(),
                             msg="Product Catalogue input box is not displayed.")

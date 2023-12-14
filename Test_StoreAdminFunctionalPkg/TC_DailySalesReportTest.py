@@ -3,7 +3,7 @@ from login import Login
 
 
 class DailySalesReportTest(unittest.TestCase):
-    def __init__(self, methodName='test_Daily_Sales_Report', data=None):
+    def __init__(self, methodName='test_daily_sales_report', data=None):
         super(DailySalesReportTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class DailySalesReportTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_Daily_Sales_Report(self):
+    def test_daily_sales_report(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -54,11 +54,11 @@ class DailySalesReportTest(unittest.TestCase):
             sidebar_menu_daily_sales_report = self.driver.find_element(By.XPATH,
                                                                        "//span[text()='Daily Sales Report']")
             self.assertTrue(sidebar_menu_daily_sales_report.is_displayed(),
-                            msg="Daily Salles Report menu is not displayed.")
+                            msg="Daily Sales Report menu is not displayed.")
             sidebar_menu_daily_sales_report.click()
             time.sleep(5)
 
-            store = self.data['test_Daily_Sales_Report']['Store']
+            store = self.data['test_daily_sales_report']['Store']
             input_store = self.driver.find_element(By.ID, "cs_bunit_id")
             self.assertTrue(input_store.is_displayed(), msg="Store input is not displayed.")
             input_store.send_keys(store)

@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddProductCategoryTest(unittest.TestCase):
-    def __init__(self, methodName='test_addProductCategory', data=None):
+    def __init__(self, methodName='test_add_product_category', data=None):
         super(AddProductCategoryTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddProductCategoryTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addProductCategory(self):
+    def test_add_product_category(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -63,25 +63,25 @@ class AddProductCategoryTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            category_code = self.data["test_addProductCategory"]["Category Code"]
+            category_code = self.data["test_add_product_category"]["Category_Code"]
             input_category_code = self.driver.find_element(By.ID, "headerTab_DCDD6A1D18CD4FF29A65AD6CB6626080")
             self.assertTrue(input_category_code.is_displayed(), msg="Category code Input box is not displayed.")
             input_category_code.send_keys(category_code)
             time.sleep(5)
 
-            category_name = self.data["test_addProductCategory"]["Category Name"]
+            category_name = self.data["test_add_product_category"]["Category_Name"]
             input_category_name = self.driver.find_element(By.ID, "headerTab_09862BBB54134EA88CD96A1120BA7470")
             self.assertTrue(input_category_name.is_displayed(), msg="Category Name input box is not displayed.")
             input_category_name.send_keys(category_name)
             time.sleep(5)
 
-            parent_category = self.data["test_addProductCategory"]["Parent Category"]
+            parent_category = self.data["test_add_product_category"]["Parent_Category"]
             input_parent_category = self.driver.find_element(By.ID, "headerTab_864BED62888C409B91883A2C59AE6EE3")
             self.assertTrue(input_parent_category.is_displayed(), msg="Parent Category input is not displayed.")
             input_parent_category.send_keys(parent_category)
             time.sleep(5)
 
-            category_description = self.data["test_addProductCategory"]["Category Description"]
+            category_description = self.data["test_add_product_category"]["Category_Description"]
             input_category_description = self.driver.find_element(By.ID,
                                                                   "headerTab_1F2F4DC8A00343CC9791790D57E1B087")
             self.assertTrue(input_category_description.is_displayed(),

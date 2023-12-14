@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddTaxCategoryTest(unittest.TestCase):
-    def __init__(self, methodName='test_addTax_Category', data=None):
+    def __init__(self, methodName='test_add_tax_category', data=None):
         super(AddTaxCategoryTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddTaxCategoryTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addTax_Category(self):
+    def test_add_tax_category(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -61,31 +61,31 @@ class AddTaxCategoryTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            business_unit = self.data['test_addTax_Category']['Business_Unit']
+            business_unit = self.data['test_add_tax_category']['Business_Unit']
             input_business_unit = self.driver.find_element(By.ID, "headerTab_3D64DCD5949449A68576ACE794200D5D")
             self.assertTrue(input_business_unit.is_displayed(), msg="Business Unit input is not displayed.")
             input_business_unit.send_keys(business_unit)
             time.sleep(5)
 
-            name = self.data['test_addTax_Category']['Name']
+            name = self.data['test_add_tax_category']['Name']
             input_name = self.driver.find_element(By.ID, "headerTab_7DA02A5644AE424EB3B4CB308144CE27")
             self.assertTrue(input_name.is_displayed(), msg="Name input is not displayed.")
             input_name.send_keys(name)
             time.sleep(5)
 
-            description = self.data['test_addTax_Category']['Description']
+            description = self.data['test_add_tax_category']['Description']
             input_description = self.driver.find_element(By.ID, "headerTab_F724B12D741A4FF0A6B293808713658D")
             self.assertTrue(input_description.is_displayed(), msg="Description input is not displayed.")
             input_description.send_keys(description)
             time.sleep(5)
 
-            intra_region_tax = self.data['test_addTax_Category']['Intra_Region_Tax']
+            intra_region_tax = self.data['test_add_tax_category']['Intra_Region_Tax']
             input_intra_region_tax = self.driver.find_element(By.ID, "headerTab_4AFDB8C5C1BE4A3DBFEBBAE45205AEF2")
             self.assertTrue(input_intra_region_tax.is_displayed(), msg="Intra Region Tax input is not displayed.")
             input_intra_region_tax.send_keys(intra_region_tax)
             time.sleep(5)
 
-            inter_region_tax = self.data['test_addTax_Category']['Inter_Region_Tax']
+            inter_region_tax = self.data['test_add_tax_category']['Inter_Region_Tax']
             input_inter_region_tax = self.driver.find_element(By.ID, "headerTab_646A99E284794CC4A811921C16C24CEB")
             self.assertTrue(input_inter_region_tax.is_displayed(), msg="Inter Region Tax input is not displayed.")
             input_inter_region_tax.send_keys(inter_region_tax)

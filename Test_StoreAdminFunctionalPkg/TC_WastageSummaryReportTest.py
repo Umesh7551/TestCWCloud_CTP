@@ -3,7 +3,7 @@ from login import Login
 
 
 class WastageSummaryReportTest(unittest.TestCase):
-    def __init__(self, methodName='test_wastage_summery_report', data=None):
+    def __init__(self, methodName='test_wastage_summary_report', data=None):
         super(WastageSummaryReportTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class WastageSummaryReportTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_wastage_summery_report(self):
+    def test_wastage_summary_report(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -51,26 +51,26 @@ class WastageSummaryReportTest(unittest.TestCase):
             menu_reports.click()
             time.sleep(5)
 
-            sidebar_menu_wastage_summery_report = self.driver.find_element(By.XPATH,
+            sidebar_menu_wastage_summary_report = self.driver.find_element(By.XPATH,
                                                                            "//span[text()='Wastage Summary Report']")
-            self.assertTrue(sidebar_menu_wastage_summery_report.is_displayed(),
-                            msg="Wastage Summery Report menu is not displayed.")
-            sidebar_menu_wastage_summery_report.click()
+            self.assertTrue(sidebar_menu_wastage_summary_report.is_displayed(),
+                            msg="Wastage Summary Report menu is not displayed.")
+            sidebar_menu_wastage_summary_report.click()
             time.sleep(5)
 
-            business_unit = self.data['test_wastage_summery_report']['Business_Unit']
+            business_unit = self.data['test_wastage_summary_report']['Business_Unit']
             input_business_unit = self.driver.find_element(By.ID, "cs_bunit_id")
             self.assertTrue(input_business_unit.is_displayed(), msg="Business Unit input is not displayed.")
             input_business_unit.send_keys(business_unit)
             time.sleep(5)
 
-            storage_location = self.data['test_wastage_summery_report']['Storage_Location']
+            storage_location = self.data['test_wastage_summary_report']['Storage_Location']
             input_storage_location = self.driver.find_element(By.ID, "m_warehouse")
             self.assertTrue(input_storage_location.is_displayed(), msg="Storage Location input is not displayed.")
             input_storage_location.send_keys(storage_location)
             time.sleep(5)
 
-            product = self.data['test_wastage_summery_report']['Product']
+            product = self.data['test_wastage_summary_report']['Product']
             input_product = self.driver.find_element(By.ID, "m_product_id")
             self.assertTrue(input_product.is_displayed(), msg="Product input is not displayed.")
             input_product.send_keys(product)

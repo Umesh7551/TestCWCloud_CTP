@@ -3,7 +3,7 @@ from login import Login
 
 
 class AddStorageLocationTest(unittest.TestCase):
-    def __init__(self, methodName='test_addStorage_location', data=None):
+    def __init__(self, methodName='test_add_storage_location', data=None):
         super(AddStorageLocationTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class AddStorageLocationTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_addStorage_location(self):
+    def test_add_storage_location(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
@@ -62,25 +62,25 @@ class AddStorageLocationTest(unittest.TestCase):
             add_new_button.click()
             time.sleep(5)
 
-            business_unit = self.data['test_addStorage_location']['Business_Unit']
+            business_unit = self.data['test_add_storage_location']['Business_Unit']
             input_business_unit = self.driver.find_element(By.ID, "headerTab_409B6D159F984629BB664FDEC90B1936")
             self.assertTrue(input_business_unit.is_displayed(), msg="Business Unit input is not displayed.")
             input_business_unit.send_keys(business_unit)
             time.sleep(5)
 
-            value = self.data['test_addStorage_location']['Value']
+            value = self.data['test_add_storage_location']['Value']
             input_value = self.driver.find_element(By.ID, "headerTab_5ADE8D2E8C0149C5BFFCC270BB238548")
             self.assertTrue(input_value.is_displayed(), msg="Value input is not displayed.")
             input_value.send_keys(value)
             time.sleep(5)
 
-            name = self.data['test_addStorage_location']['Name']
+            name = self.data['test_add_storage_location']['Name']
             input_name = self.driver.find_element(By.ID, "headerTab_8FF51B00ABCE45D59FD2BC18671550AA")
             self.assertTrue(input_name.is_displayed(), msg="Name input is not displayed.")
             input_name.send_keys(name)
             time.sleep(5)
 
-            storage_capacity = self.data['test_addStorage_location']['Storage_Capacity']
+            storage_capacity = self.data['test_add_storage_location']['Storage_Capacity']
             input_storage_capacity = self.driver.find_element(By.ID, "headerTab_04A9A8C3F1494BDF874D5028EFE75295")
             self.assertTrue(input_storage_capacity.is_displayed(), msg="Storage Capacity input is not displayed.")
             input_storage_capacity.send_keys(storage_capacity)

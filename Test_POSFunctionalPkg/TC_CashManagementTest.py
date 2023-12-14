@@ -3,7 +3,7 @@ from login import Login
 
 
 class CashManagementTest(unittest.TestCase):
-    def __init__(self, methodName='test_cashManagement', data=None):
+    def __init__(self, methodName='test_cash_management', data=None):
         super(CashManagementTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
@@ -15,7 +15,7 @@ class CashManagementTest(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_cashManagement(self):
+    def test_cash_management(self):
         if self.data:
             self.login_helper.login()
             # self.driver.maximize_window()
