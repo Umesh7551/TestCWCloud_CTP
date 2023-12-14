@@ -34,7 +34,6 @@ class TestAutomationApp:
         # Import the module dynamically
         # module = importlib.import_module('CommonImportsPkg.common_imports')
         module = importlib.import_module('CommonImportsPkg.common_imports')
-
         # print(module)
         # Get the class from the module
         # print(getattr(module, class_name))
@@ -53,11 +52,25 @@ class TestAutomationApp:
             if request.method == 'POST':
                 file_path = request.form['file_path']
                 test_case_name = request.form['test_case']
-                # print(file_path)
+                # print(request.form)
+                # Access modal form data from request.form
+                modal_data = {}
+                for key in request.form:
+                    if key.startswith('modal_'):
+                        modal_data[key.replace('modal_', '')] = request.form[key]
+                # print(modal_data)
+
                 if file_path:
                     with open(file_path, 'r') as json_file:
                         self.data = json.load(json_file)
                         # print(self.data)
+
+                    if 'test_' + test_case_name in self.data:
+                        test_data = self.data['test_' + test_case_name]
+                        # print("Test data before updating: ", test_data)
+                        # Combine test_data with modal_data
+                        test_data.update(modal_data)
+                        # print("Test data after updating: ", test_data)
                     # self.data = json.loads(request.form['data'])
                     # print(self.data)
                     if self.data and test_case_name:
@@ -92,7 +105,7 @@ class TestAutomationApp:
         @app.route('/get_data/<test_case>')
         def get_data(test_case):
             # Get the optional 'file_name' parameter from the query string
-            file_name = request.args.get('file_name', 'default_filename.json')
+            file_name = request.args.get('file_name', 'testdata.json')
 
             # Construct the path to the JSON file based on the provided file name
             json_file_path = os.path.join(os.path.dirname(__file__), file_name)

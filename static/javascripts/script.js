@@ -11,7 +11,7 @@ document.getElementById('test_case').addEventListener('change', function() {
         for (var key in data) {
           modalContent += '<div class="form-group">';
           modalContent += '<label for="' + key + '">' + key + ':</label>';
-          modalContent += '<input type="text" class="form-control" id="' + key + '" name="' + key + '" value="' + data[key] + '">';
+          modalContent += '<input type="text" class="form-control" id="' + key + '" name="' + "modal_"+ key + '" value="' + data[key] + '">';
           modalContent += '</div>';
 
         }
@@ -27,3 +27,81 @@ document.getElementById('test_case').addEventListener('change', function() {
       .catch(error => console.error('Error:', error));
   }
 });
+
+function submitForm() {
+    const fileInput = document.getElementById('file_path');
+    const testCaseSelect = document.getElementById('test_case');
+    const formData = new FormData();
+
+    formData.append('file_path', fileInput.files[0]);
+    formData.append('test_case', testCaseSelect.value);
+
+    // Add the modal form data to the request body
+    const modalInputs = document.querySelectorAll('#testCaseDetails input');
+    modalInputs.forEach(input => {
+        formData.append(input.id, input.name, input.value);
+    });
+
+    // Use AJAX to send the form data to the Flask application
+    $.ajax({
+        type: 'POST',
+        url: '/run_tests',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            // Handle the response as needed
+            console.log(response);
+        },
+        error: function (error) {
+            // Handle errors
+            console.error(error);
+        }
+    });
+}
+
+
+
+//function submitForm() {
+//        const fileInput = document.getElementById('file_path');
+//        const testCaseSelect = document.getElementById('test_case');
+//        const formData = new FormData();
+//
+//        // Append file input and test case select values
+//        formData.append('file_path', fileInput.files[0]);
+//        formData.append('test_case', testCaseSelect.value);
+//
+//        // Append data from modal form inputs
+//        const modalInputs = document.querySelectorAll('#testCaseDetails input');
+//        modalInputs.forEach(input => {
+//            formData.append(input.id, input.name, input.value);
+//            //console.log(formData)
+//        });
+//
+//        // Use AJAX to send the form data to Flask application
+//        $.ajax({
+//            type: 'POST',
+//            url: '/run_tests',
+//            data: formData,
+//            processData: false,
+//            contentType: false,
+//            success: function (response) {
+//                // Handle the response as needed
+//                console.log(response);
+//            },
+//            error: function (error) {
+//                // Handle errors
+//                console.error(error);
+//            }
+//        });
+//    }
+//
+//    // Additional code to handle modal display and form input updates
+//    document.getElementById('test_case').addEventListener('change', function () {
+//        // Your existing code to update modal content based on the selected test case
+//    });
+//
+//    // Additional code to handle modal dismissal and form input updates
+//    $('#myModal').on('hidden.bs.modal', function () {
+//        // Your existing code to handle modal dismissal
+//    });
