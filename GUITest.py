@@ -28,7 +28,7 @@ class TestAutomationApp:
         # Create a PhotoImage object
         # image = ImageTk.PhotoImage(PIL.Image.open("logo.png"))  # Replace "path_to_your_image.png" with the path to your image
         # Load the image using PIL
-        image = Image.open("logo.png")
+        image = Image.open("static/images/logo.png")
 
         # Convert the PIL image to a PhotoImage object
         photo = ImageTk.PhotoImage(image)

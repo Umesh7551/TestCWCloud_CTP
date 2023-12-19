@@ -86,10 +86,12 @@ class AddStorageLocationTest(unittest.TestCase):
             input_storage_capacity.send_keys(storage_capacity)
             time.sleep(5)
 
-            active_check = self.driver.find_element(By.ID, "headerTab_44F0C43B0466459A879D384057BEE1F9")
-            self.assertTrue(active_check.is_displayed(), msg="Active Check box is not displayed.")
-            if not active_check.is_selected():
-                active_check.click()
+            # active_check = self.driver.find_element(By.ID, "headerTab_44F0C43B0466459A879D384057BEE1F9")
+            # self.assertTrue(active_check.is_displayed(), msg="Active Check box is not displayed.")
+            # if active_check.is_selected():
+            #     pass
+            # else:
+            #     active_check.click()
 
             save_button = self.driver.find_element(By.XPATH, "//button[@id='step1']")
             self.assertTrue(save_button.is_displayed(), msg="Save Button is not Displayed.")

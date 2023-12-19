@@ -10,17 +10,27 @@ class TestAutomationApp:
     def get_test_cases(self):
         # Get the list of test cases dynamically
         test_cases = ['point_of_sale', 'park_bill', 'cash_management', 'sales_history', 'close_till', 'add_brand',
-                      'add_business_unit', 'add_customers', 'add_email_templates', 'add_image_library', 'add_pos_orders',
-                      'add_pricing_rules', 'add_product_catalogue', 'add_product_category', 'add_products', 'add_return_reasons',
-                      'add_rfid_tag', 'add_storage_location', 'add_supplier_category', 'add_supplier', 'add_tax_category',
+                      'add_business_unit', 'add_customers', 'add_email_templates', 'add_image_library',
+                      'add_pos_orders',
+                      'add_pricing_rules', 'add_product_catalogue', 'add_product_category', 'add_products',
+                      'add_return_reasons',
+                      'add_rfid_tag', 'add_storage_location', 'add_supplier_category', 'add_supplier',
+                      'add_tax_category',
                       'add_tax', 'add_till', 'add_user', 'amount_wise_nob_report', 'current_stock_report',
-                      'daily_sales_report', 'hourly_sales_report', 'in_transit_stock_report', 'inventory_adjustment_report',
-                      'low_stock_report', 'pending_stock_issue_report', 'pos_settings', 'product_wastage_report', 'purchase_by_product_report',
-                      'purchase_by_supplier_report', 'purchase_order', 'purchase_summary_report', 'purchase_tax_summary_report',
-                      'quick_goods_receipt', 'quick_purchase_order', 'quick_stock_count', 'quick_stock_issue', 'quick_stock_receipt',
-                      'quick_wastage_entry', 'sales_by_customer_report', 'sales_by_payment_mode_report', 'sales_by_product_category',
-                      'sales_by_prdouct_report', 'sales_tax_report', 'stock_aging_report_retail', 'stock_ledger_report', 'stock_movement_report_retail',
-                      'stock_position_report', 'supplier_statement_report', 'tax_summary_report', 'wastage_summary_report'
+                      'daily_sales_report', 'hourly_sales_report', 'in_transit_stock_report',
+                      'inventory_adjustment_report',
+                      'low_stock_report', 'pending_stock_issue_report', 'pos_settings', 'product_wastage_report',
+                      'purchase_by_product_report',
+                      'purchase_by_supplier_report', 'purchase_order', 'purchase_summary_report',
+                      'purchase_tax_summary_report',
+                      'quick_goods_receipt', 'quick_purchase_order', 'quick_stock_count', 'quick_stock_issue',
+                      'quick_stock_receipt',
+                      'quick_wastage_entry', 'sales_by_customer_report', 'sales_by_payment_mode_report',
+                      'sales_by_product_category',
+                      'sales_by_prdouct_report', 'sales_tax_report', 'stock_aging_report_retail', 'stock_ledger_report',
+                      'stock_movement_report_retail',
+                      'stock_position_report', 'supplier_statement_report', 'tax_summary_report',
+                      'wastage_summary_report'
                       ]
         return test_cases
 
@@ -39,16 +49,32 @@ class TestAutomationApp:
         # print(getattr(module, class_name))
         return getattr(module, class_name)
 
-
-
     def setup_routes(self):
         @self.app.route('/')
         def index():
+            """
+                This is a root url for flask application.
+                This is using docstrings for specifications.
+                ---
+                responses:
+                  200:
+                    description: This endpoint gives first homepage for flask application.
+
+    """
             test_cases = self.get_test_cases()
             return render_template('index.html', test_cases=test_cases)
 
         @self.app.route('/run_tests', methods=['POST'])
         def run_tests():
+            """
+                            This endpoint is used to run the test case .
+                            This is using docstrings for specifications.
+                            ---
+                            responses:
+                              200:
+                                description: If test case runs successfully then it shows Test case passed otherwise gives error message .
+
+                """
             if request.method == 'POST':
                 file_path = request.form['file_path']
                 test_case_name = request.form['test_case']
@@ -104,6 +130,22 @@ class TestAutomationApp:
 
         @app.route('/get_data/<test_case>')
         def get_data(test_case):
+            # print(type(test_case))
+            """
+                get_data endpoint returns data from the json file based on selected test case in the form of Form data.
+                This is using docstrings for specifications.
+                ---
+                parameters:
+                  - name: test_case
+                    in: path
+                    type: string
+                    required: true
+
+                responses:
+                  200:
+                    description: It shows all data from selected json file in form input fields.
+
+    """
             # Get the optional 'file_name' parameter from the query string
             file_name = request.args.get('file_name', 'testdata.json')
 
@@ -120,8 +162,6 @@ class TestAutomationApp:
                         return jsonify({'error': 'Test case not found'})
             else:
                 return jsonify({'error': 'JSON file not found'})
-
-
 
         # @app.route('/get_data/<test_case>')
         # def get_data(test_case):
@@ -142,7 +182,6 @@ class TestAutomationApp:
         #     else:
         #         return jsonify({'error': 'Test case not found'})
 
-
         # @app.route('/update_data/<test_case>', methods=['POST'])
         # def update_data(test_case):
         #     # Load existing data from the JSON file
@@ -161,12 +200,15 @@ class TestAutomationApp:
         #     # return jsonify({'message': 'Data updated successfully'})
         #     flash("Data updated successfully", "modal_success")
         #     return render_template("index.html")
-            # return jsonify({"status": "success", "message": "Data updated successfully"})
-            # return jsonify({'message': 'Data updated successfully'})
+        # return jsonify({"status": "success", "message": "Data updated successfully"})
+        # return jsonify({'message': 'Data updated successfully'})
 
 
 app = Flask(__name__)
 app.secret_key = 'This is secret key for test platform.'
+swagger = Swagger(app)
+# api = Api(app)
+# swagger = swagger.docs(Api(app), apiVersion='1.0', api_spec_url='/api/swagger')
 my_app = TestAutomationApp(app)
 
 if __name__ == "__main__":
