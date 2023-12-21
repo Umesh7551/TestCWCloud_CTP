@@ -58,18 +58,24 @@ class PosSettingsTest(unittest.TestCase):
             # Payments
             enable_cash_check = self.driver.find_element(By.ID, "mainForm_enableCash")
             self.assertTrue(enable_cash_check.is_displayed(), msg="Enable Cash Check is not displayed.")
-            if not enable_cash_check.is_selected():
+            if enable_cash_check.is_selected():
+                pass
+            else:
                 enable_cash_check.click()
 
             enable_card_check = self.driver.find_element(By.ID, "mainForm_enableCard")
             self.assertTrue(enable_card_check.is_displayed(), msg="Enable Card Check is not displayed.")
-            if not enable_card_check.is_selected():
+            if enable_card_check.is_selected():
+                pass
+            else:
                 enable_card_check.click()
 
             # Check if enable_card_integration is displayed and selected
             enable_card_integration = self.driver.find_element(By.ID, "mainForm_enableCardIntegration")
             self.assertTrue(enable_card_integration.is_displayed(), msg="Enable Card Integration is not displayed.")
-            if not enable_card_integration.is_selected():
+            if enable_card_integration.is_selected():
+                pass
+            else:
                 enable_card_integration.click()
 
             # Check if input_payment_combo_box is displayed
@@ -80,7 +86,9 @@ class PosSettingsTest(unittest.TestCase):
             # Customer
             customer_search_check = self.driver.find_element(By.ID, "mainForm_showCustomerSearch")
             self.assertTrue(customer_search_check.is_displayed(), msg="Customer Search Check box is not displayed.")
-            if not customer_search_check.is_selected():
+            if customer_search_check.is_selected():
+                pass
+            else:
                 customer_search_check.click()
 
             customer_search = self.data["test_pos_settings"]["Customer_Search"]
@@ -90,78 +98,106 @@ class PosSettingsTest(unittest.TestCase):
 
             search_by_check = self.driver.find_element(By.ID, "mainForm_defaultCustomerSearch")
             self.assertTrue(search_by_check.is_displayed(), msg="Search by check box is not displayed.")
-            if not search_by_check.is_selected():
+            if search_by_check.is_selected():
+                pass
+            else:
                 search_by_check.click()
 
             by_name_check = self.driver.find_element(By.ID, "mainForm_byName")
             self.assertTrue(by_name_check.is_displayed(), msg="By Name Check box is not displayed")
-            if not by_name_check.is_selected():
+            if by_name_check.is_selected():
+                pass
+            else:
                 by_name_check.click()
 
             by_number_check = self.driver.find_element(By.ID, "mainForm_byNumber")
             self.assertTrue(by_number_check.is_displayed(), msg="By Number Check box is not displayed")
-            if not by_number_check.is_selected():
+            if by_number_check.is_selected():
+                pass
+            else:
                 by_number_check.click()
             # Cash Register
             enable_shift_open = self.driver.find_element(By.ID, "mainForm_showTillOpening")
             self.assertTrue(enable_shift_open.is_displayed(), msg="Enable Shift Open Check box is not displayed")
-            if not enable_shift_open.is_selected():
+            if enable_shift_open.is_selected():
+                pass
+            else:
                 enable_shift_open.click()
 
             enable_shift_close = self.driver.find_element(By.ID, "mainForm_shiftClose")
             self.assertTrue(enable_shift_close.is_displayed(), msg="Enable Shift Close Check box is not displayed")
-            if not enable_shift_close.is_selected():
+            if enable_shift_close.is_selected():
+                pass
+            else:
                 enable_shift_close.click()
 
             allow_petty_cash = self.driver.find_element(By.ID, "mainForm_pettyCash")
             self.assertTrue(allow_petty_cash.is_displayed(), msg="Allow Petty Cash Check box is not displayed")
-            if not allow_petty_cash.is_selected():
+            if allow_petty_cash.is_selected():
+                pass
+            else:
                 allow_petty_cash.click()
 
             allow_cash_in = self.driver.find_element(By.ID, "mainForm_cashIn")
             self.assertTrue(allow_cash_in.is_displayed(), msg="Allow Cash In Check box is not displayed")
-            if not allow_cash_in.is_selected():
+            if allow_cash_in.is_selected():
+                pass
+            else:
                 allow_cash_in.click()
 
             allow_cash_out = self.driver.find_element(By.ID, "mainForm_cashOut")
             self.assertTrue(allow_cash_out.is_displayed(), msg="Allow Cash Out Check box is not displayed")
-            if not allow_cash_out.is_selected():
+            if allow_cash_out.is_selected():
+                pass
+            else:
                 allow_cash_out.click()
             # POS
             allow_return_refund = self.driver.find_element(By.ID, "mainForm_allowReturnRefund")
             self.assertTrue(allow_return_refund.is_displayed(),
                             msg="Allow Return and Refund Check box is not displayed")
-            if not allow_return_refund.is_selected():
+            if allow_return_refund.is_selected():
+                pass
+            else:
                 allow_return_refund.click()
 
             allow_bill_parking = self.driver.find_element(By.ID, "mainForm_allowBillParking")
             self.assertTrue(allow_bill_parking.is_displayed(),
                             msg="Allow Bill Parking Check box is not displayed")
-            if not allow_bill_parking.is_selected():
+            if allow_bill_parking.is_selected():
+                pass
+            else:
                 allow_bill_parking.click()
 
             show_sales_return = self.driver.find_element(By.ID, "mainForm_showSalesReturn")
             self.assertTrue(show_sales_return.is_displayed(),
                             msg="Show Sales Return Check box is not displayed")
-            if not show_sales_return.is_selected():
+            if show_sales_return.is_selected():
+                pass
+            else:
                 show_sales_return.click()
 
             allow_return_exchange = self.driver.find_element(By.ID, "mainForm_showSalesReturn")
             self.assertTrue(allow_return_exchange.is_displayed(),
                             msg="Allow Return Exchange Check box is not displayed")
-            if not allow_return_exchange.is_selected():
+            if allow_return_exchange.is_selected():
+                pass
+            else:
                 allow_return_exchange.click()
 
             show_product_images = self.driver.find_element(By.ID, "mainForm_showImage")
             self.assertTrue(show_product_images.is_displayed(),
                             msg="Show Product Images Check box is not displayed")
-            if not show_product_images.is_selected():
+            if show_product_images.is_selected():
+                pass
+            else:
                 show_product_images.click()
             # Sale Type
             cash_and_carry = self.driver.find_element(By.ID, "mainForm_cashCarry")
             self.assertTrue(cash_and_carry.is_displayed(),
                             msg="Cash and Carry Check box is not displayed")
-            if not cash_and_carry.is_selected():
+            if cash_and_carry.is_selected():
+                pass
+            else:
                 cash_and_carry.click()
 
             save_button = self.driver.find_element(By.XPATH, "//span[text()='Save']")

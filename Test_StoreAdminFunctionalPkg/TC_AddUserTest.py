@@ -49,11 +49,10 @@ class AddUserTest(unittest.TestCase):
             menu_settings = self.driver.find_element(By.XPATH, "//span[text()='Settings']")
             self.assertTrue(menu_settings.is_displayed(), msg="Settings Menu is not Displayed")
             menu_settings.click()
-            time.sleep(5)
+            time.sleep(10)
 
             sidebar_menu_user = self.driver.find_element(By.XPATH, "//span[text()='User']")
-            self.assertTrue(sidebar_menu_user.is_displayed(),
-                            msg="User menu is not displayed.")
+            self.assertTrue(sidebar_menu_user.is_displayed(), msg="User menu is not displayed.")
             sidebar_menu_user.click()
             time.sleep(5)
 

@@ -71,20 +71,20 @@
   "test_add_image_library": {
     "Image": "https://contents.mediadecathlon.com/p2006788/8ff26bb9238a317671e10df111d7c129/p2006788.jpg?format=auto&quality=70&f=650x0",
     "Description": "This is test image.",
-    "Image_Group": "Product"
+    "Image_Group": ""
   },
   "test_add_rfid_tag": {
-    "Product_Code": "1005",
-    "Product": "1005-Mirinda",
-    "Tag_Value": "234324234342343234234",
-    "Tag_Type": "EPC",
-    "Tagging_Date": "19-12-2023",
-    "Batch_Number": "21321312",
-    "Batch": "5531562356",
-    "Location": "Bajara Hills",
-    "Tag_Status": "Active",
-    "Last_Scanned_Date": "18-12-2023",
-    "Scanned_By": "Umesh Hindole"
+    "Product_Code": "",
+    "Product": "",
+    "Tag_Value": "",
+    "Tag_Type": "",
+    "Tagging_Date": "",
+    "Batch_Number": "",
+    "Batch": "",
+    "Location": "",
+    "Tag_Status": "",
+    "Last_Scanned_Date": "",
+    "Scanned_By": ""
   },
   "test_add_pos_orders": {
     "Store": "Exceloid-901",
@@ -279,24 +279,24 @@
     "Supplier": ""
   },
   "test_add_business_unit": {
-    "Business_unit_id": "70115",
-    "Name": "RR Enterprizes",
-    "Description": "This is store added by Umesh",
-    "Type": "Retail Store",
+    "Business_unit_id": "",
+    "Name": "",
+    "Description": "",
+    "Type": "",
     "Parent_Business_Unit": "",
     "Legal_Entity": "",
-    "GST_No": "123223434",
+    "GST_No": "",
     "Currency": "",
-    "External_Bunit_ref": "sdhjdhjssjd",
-    "Latitude": "17.865982",
-    "Longitude": "18.2568545",
-    "Image_url": "None"
+    "External_Bunit_ref": "",
+    "Latitude": "",
+    "Longitude": "",
+    "Image_url": ""
   },
   "test_add_storage_location": {
-    "Business_Unit": "RR Enterprises",
-    "Value": "34656",
-    "Name": "Umesh Hindole",
-    "Storage_Capacity": "764736"
+    "Business_Unit": "",
+    "Value": "",
+    "Name": "",
+    "Storage_Capacity": ""
   },
   "test_add_till": {
     "Store": "",

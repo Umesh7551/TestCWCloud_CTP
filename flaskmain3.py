@@ -42,7 +42,6 @@ class TestAutomationApp:
         class_name += 'Test'
         # print(class_name)
         # Import the module dynamically
-        # module = importlib.import_module('CommonImportsPkg.common_imports')
         module = importlib.import_module('CommonImportsPkg.common_imports')
         # print(module)
         # Get the class from the module
@@ -67,12 +66,12 @@ class TestAutomationApp:
         @self.app.route('/run_tests', methods=['POST'])
         def run_tests():
             """
-                            This endpoint is used to run the test case .
-                            This is using docstrings for specifications.
-                            ---
-                            responses:
-                              200:
-                                description: If test case runs successfully then it shows Test case passed otherwise gives error message .
+                This endpoint is used to run the test case .
+                This is using docstrings for specifications.
+                ---
+                responses:
+                  200:
+                    description: If test case runs successfully then it shows Test case passed otherwise gives error message .
 
                 """
             if request.method == 'POST':
@@ -148,10 +147,11 @@ class TestAutomationApp:
     """
             # Get the optional 'file_name' parameter from the query string
             file_name = request.args.get('file_name', 'testdata.json')
+            print("File Name: ", file_name)
 
             # Construct the path to the JSON file based on the provided file name
             json_file_path = os.path.join(os.path.dirname(__file__), file_name)
-
+            print("Json File Path: ", json_file_path)
             if os.path.exists(json_file_path):
                 with open(json_file_path, 'r') as json_file:
                     data = json.load(json_file)
@@ -166,10 +166,10 @@ class TestAutomationApp:
         # @app.route('/get_data/<test_case>')
         # def get_data(test_case):
         #     # Assuming data.json is in the 'json_data' directory relative to app.py
-        #     # json_file_path = os.path.join(os.path.dirname(__file__), 'testdata.json')
+        #     # json_file_path = os.path.join(os.path.dirname(__file__), 'testdata1.json')
         #
         #     # Assuming data.json is a file in the same directory as app.py
-        #     with open('testdata.json', 'r') as json_file:
+        #     with open('testdata1.json', 'r') as json_file:
         #     # with open(json_file_path, 'r') as json_file:
         #         data = json.load(json_file)
         #         # print(data)
@@ -185,7 +185,7 @@ class TestAutomationApp:
         # @app.route('/update_data/<test_case>', methods=['POST'])
         # def update_data(test_case):
         #     # Load existing data from the JSON file
-        #     with open('testdata.json', 'r') as json_file:
+        #     with open('testdata1.json', 'r') as json_file:
         #         existing_data = json.load(json_file)
         #         if 'test_' + test_case in existing_data:
         #             test_case = 'test_' + test_case
@@ -194,7 +194,7 @@ class TestAutomationApp:
         #             existing_data[test_case].update(form_data)
         #
         #     # Save the updated data back to the JSON file
-        #     with open('testdata.json', 'w') as json_file:
+        #     with open('testdata1.json', 'w') as json_file:
         #         json.dump(existing_data, json_file, indent=2)
         #
         #     # return jsonify({'message': 'Data updated successfully'})

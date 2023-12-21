@@ -51,9 +51,9 @@ class AddBusinessUnitTest(unittest.TestCase):
             menu_settings.click()
             time.sleep(5)
 
-            sidebar_menu_business_unit = self.driver.find_element(By.XPATH, "//span[text()='Business Unit']")
-            self.assertTrue(sidebar_menu_business_unit.is_displayed(), msg="Business Unit menu is not displayed.")
-            sidebar_menu_business_unit.click()
+            sidebar_menu_stores = self.driver.find_element(By.XPATH, "//span[text()='Stores']")
+            self.assertTrue(sidebar_menu_stores.is_displayed(), msg="Business Unit menu is not displayed.")
+            sidebar_menu_stores.click()
             time.sleep(5)
 
             add_new_button = self.driver.find_element(By.XPATH, "//span[text()='Add New']")
