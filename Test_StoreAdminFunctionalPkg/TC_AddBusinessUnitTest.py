@@ -64,6 +64,8 @@ class AddBusinessUnitTest(unittest.TestCase):
             business_unit_id = self.data["test_add_business_unit"]["Business_unit_id"]
             input_business_unit_id = self.driver.find_element(By.ID, "headerTab_01BE43C2E97742A6A4048A5AD7AE8995")
             self.assertTrue(input_business_unit_id.is_displayed(), msg="Business Unit ID input is not displayed.")
+            input_business_unit_id.clear()
+            time.sleep(5)
             input_business_unit_id.send_keys(business_unit_id)
             time.sleep(5)
 

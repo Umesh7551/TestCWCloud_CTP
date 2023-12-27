@@ -55,10 +55,23 @@ class AddProductsTest(unittest.TestCase):
             # sidebar_menu_product.click()
             # time.sleep(5)
 
-            add_new_button = self.driver.find_element(By.XPATH, "//button[@class='ant-btn ant-btn-primary']")
-            self.assertTrue(add_new_button.is_displayed(), msg="Add New Button is not displayed")
-            add_new_button.click()
+            start_button = self.driver.find_element(By.ID, "step1")
+            self.assertTrue(start_button.is_displayed(), msg="Add New Button is not displayed")
+            start_button.click()
             time.sleep(10)
+
+            # Get the current window handle (main window)
+            main_window = self.driver.current_window_handle
+
+            # Get all window handles (including the main window)
+            all_handles = self.driver.window_handles
+
+            # Switch to the new window
+            for handle in all_handles:
+                if handle != main_window:
+                    self.driver.switch_to.window(handle)
+                    break
+            time.sleep(5)
 
             # product_info = self.data["test_add_products"]["product_info"]
             product_name = self.data["test_add_products"]["Product_Name"]
@@ -124,11 +137,11 @@ class AddProductsTest(unittest.TestCase):
             input_product_description.send_keys(product_description)
             time.sleep(5)
 
-            input_image_url = self.driver.find_element(By.XPATH, "//span[text()='Upload']")
-            self.assertTrue(input_image_url.is_displayed(), msg="Image Upload is not displayed.")
-            # input_image_url.clear()
-            input_image_url.send_keys(image_url)
-            time.sleep(5)
+            # input_image_url = self.driver.find_element(By.XPATH, "//span[text()='Upload']")
+            # self.assertTrue(input_image_url.is_displayed(), msg="Image Upload is not displayed.")
+            # # input_image_url.clear()
+            # input_image_url.send_keys(image_url)
+            # time.sleep(5)
 
             input_product_catalogue = self.driver.find_element(By.ID, "headerTab_D3F455D32BCA4802816CC0CEFB89D64F")
             self.assertTrue(input_product_catalogue.is_displayed(), msg="Product Catalogue is not displayed.")

@@ -108,6 +108,7 @@ class TestAutomationApp:
                         # result = runner.run(suite_pos)
 
                         test_class = self.get_test_class(test_case_name)
+                        print("Test Class", test_class)
                         test_instance = test_class(data=self.data)
 
                         suite = unittest.TestSuite([test_instance])
@@ -147,10 +148,11 @@ class TestAutomationApp:
     """
             # Get the optional 'file_name' parameter from the query string
             file_name = request.args.get('file_name', 'testdata.json')
-            print("File Name: ", file_name)
+            # print("File Name: ", file_name)
 
             # Construct the path to the JSON file based on the provided file name
-            json_file_path = os.path.join(os.path.dirname(__file__), file_name)
+            # json_file_path = os.path.join(os.path.dirname(__file__), file_name)
+            json_file_path = os.path.join(file_name)
             print("Json File Path: ", json_file_path)
             if os.path.exists(json_file_path):
                 with open(json_file_path, 'r') as json_file:
@@ -207,8 +209,6 @@ class TestAutomationApp:
 app = Flask(__name__)
 app.secret_key = 'This is secret key for test platform.'
 swagger = Swagger(app)
-# api = Api(app)
-# swagger = swagger.docs(Api(app), apiVersion='1.0', api_spec_url='/api/swagger')
 my_app = TestAutomationApp(app)
 
 if __name__ == "__main__":

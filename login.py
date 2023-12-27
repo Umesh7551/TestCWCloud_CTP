@@ -7,7 +7,7 @@ class Login:
         self.driver = driver
         self.data = data
         self.test_case = test_case
-        print(self.test_case)
+        # print(self.test_case)
     def login(self):
         self.driver.maximize_window()
         self.driver.get("https://test-auth.cwcloud.in:8412/sign-in")

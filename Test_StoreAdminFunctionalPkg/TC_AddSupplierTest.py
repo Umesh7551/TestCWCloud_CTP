@@ -46,7 +46,7 @@ class AddSupplierTest(unittest.TestCase):
             store_admin.click()
             time.sleep(10)
 
-            menu_purchase = self.driver.find_element(By.XPATH, "//span[text()='Sales']")
+            menu_purchase = self.driver.find_element(By.XPATH, "//span[text()='Purchase']")
             self.assertTrue(menu_purchase.is_displayed(), msg="Purchase Menu is not Displayed")
             menu_purchase.click()
             time.sleep(5)
@@ -82,7 +82,7 @@ class AddSupplierTest(unittest.TestCase):
             time.sleep(5)
 
             supplier_category = self.data["test_add_supplier"]["Supplier_Category"]
-            input_supplier_category = self.driver.find_element(By.ID, "headerTab_98DC62FB03F84DDD947683A67A3DE902")
+            input_supplier_category = self.driver.find_element(By.ID, "headerTab_BCA9B1159FD341D8955D425F3178954F")
             self.assertTrue(input_supplier_category.is_displayed(), msg="Supplier Category input is not displayed.")
             input_supplier_category.send_keys(supplier_category)
             time.sleep(5)

@@ -53,13 +53,12 @@ class AddEmailTemplatesTest(unittest.TestCase):
             time.sleep(5)
 
             sidebar_menu_email_templates = self.driver.find_element(By.XPATH, "//span[text()='Email Templates']")
-            self.assertTrue(sidebar_menu_email_templates.is_displayed(),
-                            msg="Email Templates menu is not displayed.")
+            self.assertTrue(sidebar_menu_email_templates.is_displayed(), msg="Email Templates menu is not displayed.")
             sidebar_menu_email_templates.click()
             time.sleep(5)
 
-            add_new_button = self.driver.find_element(By.XPATH, "//span[text()='New']")
-            self.assertTrue(add_new_button.is_displayed(), msg="New button is not displayed.")
+            add_new_button = self.driver.find_element(By.XPATH, "//span[text()='Add New']")
+            self.assertTrue(add_new_button.is_displayed(), msg="Add New button is not displayed.")
             add_new_button.click()
             time.sleep(5)
 

@@ -2,7 +2,7 @@ document.getElementById('test_case').addEventListener('change', function() {
   var selectedTestCase = this.value;
   var selectedFileName = document.getElementById('file_path').value.split('\\').pop(); // Extracting file name from file path
 //  var selectedFileName = document.getElementById('file_path').value; // Extracting file name from file path
-  console.log(selectedFileName)
+//  console.log(selectedFileName)
   if (selectedTestCase !== '') {
     // Make an AJAX request to the Flask backend to get data for the selected test case
     fetch('/get_data/' + selectedTestCase + '?file_name=' + selectedFileName)
