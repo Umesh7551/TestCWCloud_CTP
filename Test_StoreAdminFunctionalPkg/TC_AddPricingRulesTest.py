@@ -95,7 +95,7 @@ class AddPricingRulesTest(unittest.TestCase):
             time.sleep(5)
 
             end_date = self.data["test_add_pricing_rules"]["End_Date"]
-            input_end_date = self.driver.find_element(By.ID, "headerTab_6184E60E039B474B96D37D32A6C3C70C")
+            input_end_date = self.driver.find_element(By.ID, "headerTab_1EA1BC1C84D14D078A20CD3291256F34")
             self.assertTrue(input_end_date.is_displayed(), msg="End Date input is not displayed.")
             input_end_date.send_keys(end_date)
             time.sleep(5)
@@ -135,7 +135,7 @@ class AddPricingRulesTest(unittest.TestCase):
             time.sleep(5)
 
             maximum_qty = self.data["test_add_pricing_rules"]["Maximum_Qty"]
-            input_maximum_qty = self.driver.find_element(By.ID, "headerTab_B7CFAF12181644B6A38196DEA23700E1")
+            input_maximum_qty = self.driver.find_element(By.ID, "headerTab_9BB4F090B970452FB3398F80C091C60D")
             self.assertTrue(input_maximum_qty.is_displayed(),
                             msg="Maximum Quantity input is not displayed.")
             input_maximum_qty.send_keys(maximum_qty)
