@@ -66,6 +66,7 @@ class AddBrandTest(unittest.TestCase):
             brand_name = self.data["test_add_brand"]["Brand_Name"]
             input_brand_name = self.driver.find_element(By.ID, "headerTab_406034723F6E4DC4BC8352D364E3A188")
             self.assertTrue(input_brand_name.is_displayed(), msg="Brand Name input box is not displayed.")
+            input_brand_name.clear()
             input_brand_name.send_keys(brand_name)
             time.sleep(5)
 

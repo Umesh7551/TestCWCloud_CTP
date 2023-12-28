@@ -74,7 +74,6 @@ class SalesByProductReportTest(unittest.TestCase):
             self.assertTrue(run_button.is_displayed(), msg="Run button is not displayed.")
             if input_store and input_product is not None:
                 run_button.click()
-
             flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
             flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

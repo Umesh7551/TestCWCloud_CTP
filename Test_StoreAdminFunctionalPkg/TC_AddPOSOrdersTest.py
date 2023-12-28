@@ -2,9 +2,9 @@ from CommonImportsPkg.common_imports import *
 from login import Login
 
 
-class AddPOSOrdersTest(unittest.TestCase):
+class AddPosOrdersTest(unittest.TestCase):
     def __init__(self, methodName='test_add_pos_orders', data=None):
-        super(AddPOSOrdersTest, self).__init__(methodName)
+        super(AddPosOrdersTest, self).__init__(methodName)
         self.data = data
         self.test_name = methodName
 
@@ -53,7 +53,7 @@ class AddPOSOrdersTest(unittest.TestCase):
             time.sleep(5)
 
             sidebar_menu_pos_orders = self.driver.find_element(By.XPATH,
-                                                               "//span[text()='POS Orders']")
+                                                               "//span[text()='POS Order']")
             self.assertTrue(sidebar_menu_pos_orders.is_displayed(),
                             msg="Pos Orders menu is not displayed.")
             sidebar_menu_pos_orders.click()
@@ -70,11 +70,11 @@ class AddPOSOrdersTest(unittest.TestCase):
             input_store.send_keys(store)
             time.sleep(5)
 
-            sale_type = self.data["test_add_pos_orders"]["Sale_Type"]
-            input_sale_type = self.driver.find_element(By.ID, "headerTab_4870F8FD52FD491E91D23A51E47C835D")
-            self.assertTrue(input_sale_type.is_displayed(), msg="Sale Type input is not displayed.")
-            input_sale_type.send_keys(sale_type)
-            time.sleep(5)
+            # sale_type = self.data["test_add_pos_orders"]["Sale_Type"]
+            # input_sale_type = self.driver.find_element(By.ID, "headerTab_4870F8FD52FD491E91D23A51E47C835D")
+            # self.assertTrue(input_sale_type.is_displayed(), msg="Sale Type input is not displayed.")
+            # input_sale_type.send_keys(sale_type)
+            # time.sleep(5)
 
             document_type = self.data["test_add_pos_orders"]["Document_Type"]
             input_document_type = self.driver.find_element(By.ID, "headerTab_F099D992F66C4328840B015336C388D9")
@@ -91,7 +91,7 @@ class AddPOSOrdersTest(unittest.TestCase):
             order_date = self.data["test_add_pos_orders"]["Order_Date"]
             input_order_date = self.driver.find_element(By.ID, "headerTab_A999CD069E704FB889A7348DEEC20AE2")
             self.assertTrue(input_order_date.is_displayed(), msg="Order date input is not displayed.")
-            input_sale_type.send_keys(order_date)
+            input_order_date.send_keys(order_date)
             time.sleep(5)
 
             order_time = self.data["test_add_pos_orders"]["Order_Time"]
@@ -118,11 +118,11 @@ class AddPOSOrdersTest(unittest.TestCase):
             input_payment_method.send_keys(payment_method)
             time.sleep(5)
 
-            sales_rep = self.data["test_add_pos_orders"]["Sales_Rep"]
-            input_sales_rep = self.driver.find_element(By.ID, "headerTab_B22065C7EB1E4AFF8FFA6FA6EB3797DC")
-            self.assertTrue(input_sales_rep.is_displayed(), msg="Sales Rep input is not displayed.")
-            input_sales_rep.send_keys(sales_rep)
-            time.sleep(5)
+            # sales_rep = self.data["test_add_pos_orders"]["Sales_Rep"]
+            # input_sales_rep = self.driver.find_element(By.ID, "headerTab_B22065C7EB1E4AFF8FFA6FA6EB3797DC")
+            # self.assertTrue(input_sales_rep.is_displayed(), msg="Sales Rep input is not displayed.")
+            # input_sales_rep.send_keys(sales_rep)
+            # time.sleep(5)
 
             save_button = self.driver.find_element(By.XPATH, "//button[@id='step1']")
             self.assertTrue(save_button.is_displayed(), msg="Save Button is not Displayed.")

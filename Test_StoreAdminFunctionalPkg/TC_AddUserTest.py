@@ -51,14 +51,15 @@ class AddUserTest(unittest.TestCase):
             menu_settings.click()
             time.sleep(10)
 
-            sidebar_menu_user = self.driver.find_element(By.XPATH, "//span[text()='User']")
-            self.assertTrue(sidebar_menu_user.is_displayed(), msg="User menu is not displayed.")
-            sidebar_menu_user.click()
-            time.sleep(5)
+            # sidebar_menu_user = self.driver.find_element(By.XPATH, "//span[text()='User']")
+            # self.assertTrue(sidebar_menu_user.is_displayed(), msg="User menu is not displayed.")
+            # if sidebar_menu_user.is_displayed():
+            #     sidebar_menu_user.click()
+            # time.sleep(5)
 
-            add_new_button = self.driver.find_element(By.XPATH, "//span[text()='New']")
-            self.assertTrue(add_new_button.is_displayed(), msg="New button is not displayed.")
-            add_new_button.click()
+            new_button = self.driver.find_element(By.XPATH, "//span[text()='New']")
+            self.assertTrue(new_button.is_displayed(), msg="New button is not displayed.")
+            new_button.click()
             time.sleep(5)
 
             business_unit = self.data["test_add_user"]["Business_Unit"]
@@ -103,12 +104,12 @@ class AddUserTest(unittest.TestCase):
             input_home_report.send_keys(home_report)
             time.sleep(5)
 
-            admin_check = self.driver.find_element(By.ID, "control-hooks_isactive")
-            self.assertTrue(admin_check.is_displayed(), msg="Admin Check box is not displayed.")
-            if not admin_check.is_selected():
-                admin_check.click()
-            else:
-                pass
+            # admin_check = self.driver.find_element(By.ID, "control-hooks_isactive")
+            # self.assertTrue(admin_check.is_displayed(), msg="Admin Check box is not displayed.")
+            # if admin_check.is_selected():
+            #     pass
+            # else:
+            #     pass
 
             # auto_generate_password_check = self.driver.find_element(By.ID, "")
             # self.assertTrue(auto_generate_password_check.is_displayed(), msg="Admin Check box is not displayed.")

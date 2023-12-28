@@ -78,54 +78,63 @@ class AddCustomersTest(unittest.TestCase):
             firstname = self.data["test_add_customers"]["First_Name"]
             input_firstname = self.driver.find_element(By.ID, "headerTab_1B540617B4374162BCCE219EF7D15365")
             self.assertTrue(input_firstname.is_displayed(), msg="First Name input is not displayed.")
+            input_firstname.clear()
             input_firstname.send_keys(firstname)
             time.sleep(5)
 
             name = self.data["test_add_customers"]["Name"]
             input_name = self.driver.find_element(By.ID, "headerTab_3510E858B362493EBE47062864E0001B")
             self.assertTrue(input_name.is_displayed(), msg="Name input is not displayed.")
+            input_name.clear()
             input_name.send_keys(name)
             time.sleep(5)
 
             lastname = self.data["test_add_customers"]["Last_Name"]
             input_lastname = self.driver.find_element(By.ID, "headerTab_F73EDEEFC2454F2D98AAB99219032244")
             self.assertTrue(input_lastname.is_displayed(), msg="Last Name input is not displayed.")
+            input_lastname.clear()
             input_lastname.send_keys(lastname)
             time.sleep(5)
 
             mobile = self.data["test_add_customers"]["Mobile_No"]
             input_mobile = self.driver.find_element(By.ID, "headerTab_90DDABD2BFD1446B8B6142A3D88D5728")
             self.assertTrue(input_mobile.is_displayed(), msg="Mobile input is not displayed.")
+            input_mobile.clear()
             input_mobile.send_keys(mobile)
             time.sleep(5)
 
             country_code = self.data["test_add_customers"]["Country_Code"]
             input_country_code = self.driver.find_element(By.ID, "headerTab_4D66FA76BD134195B307D7BF15B530BA")
             self.assertTrue(input_country_code.is_displayed(), msg="Country Code input is not displayed.")
+            input_country_code.clear()
             input_country_code.send_keys(country_code)
             time.sleep(5)
 
             email = self.data["test_add_customers"]["Email"]
             input_email = self.driver.find_element(By.ID, "headerTab_8B96C59CACE54500AB145D9DCC5F3107")
             self.assertTrue(input_email.is_displayed(), msg="Email input is not displayed.")
+            input_email.clear()
             input_email.send_keys(email)
             time.sleep(5)
 
             pincode = self.data["test_add_customers"]["Pincode"]
             input_pincode = self.driver.find_element(By.ID, "headerTab_4C336FDDC5FE4C2694B10943C144A312")
             self.assertTrue(input_pincode.is_displayed(), msg="Pincode input is not displayed.")
+            input_pincode.clear()
             input_pincode.send_keys(pincode)
             time.sleep(5)
 
             default_customer = self.data["test_add_customers"]["Default_Customer"]
             input_default_customer = self.driver.find_element(By.ID, "headerTab_883F14CAFEF041AFB0F51E88A76F42F1")
             self.assertTrue(input_default_customer.is_displayed(), msg="Default Customer input is not displayed.")
+            input_default_customer.clear()
             input_default_customer.send_keys(default_customer)
             time.sleep(5)
 
             credit_limit = self.data["test_add_customers"]["Credit_Limit"]
             input_credit_limit = self.driver.find_element(By.ID, "headerTab_B8CFAF37257D4E90A726318ACD695F16")
             self.assertTrue(input_credit_limit.is_displayed(), msg="Credit Limit input is not displayed.")
+            input_credit_limit.clear()
             input_credit_limit.send_keys(credit_limit)
             time.sleep(5)
 

@@ -92,7 +92,6 @@ class QuickStockIssueTest(unittest.TestCase):
             self.assertTrue(fetch_button.is_displayed(), msg="Fetch Button is not displayed.")
             if input_source and input_destination and input_stock_request and input_remarks and input_date is not None:
                 fetch_button.click()
-
             flash(f"You have passed {self.test_name.upper()} Test case.", "success")
         else:
             flash(f"You have not passed {self.test_name.upper()} Test case.", "error")

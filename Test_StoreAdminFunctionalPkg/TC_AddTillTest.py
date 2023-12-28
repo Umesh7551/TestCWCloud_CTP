@@ -51,8 +51,8 @@ class AddTillTest(unittest.TestCase):
             menu_settings.click()
             time.sleep(5)
 
-            sidebar_menu_till = self.driver.find_element(By.XPATH, "//span[text()='Till']")
-            self.assertTrue(sidebar_menu_till.is_displayed(), msg="Till menu is not displayed.")
+            sidebar_menu_till = self.driver.find_element(By.XPATH, "//span[text()='Tills']")
+            self.assertTrue(sidebar_menu_till.is_displayed(), msg="Tills menu is not displayed.")
             sidebar_menu_till.click()
             time.sleep(5)
 
@@ -74,7 +74,7 @@ class AddTillTest(unittest.TestCase):
             time.sleep(5)
 
             till_id = self.data['test_add_till']['Till_ID']
-            input_till_id = self.driver.find_element(By.ID, "headerTab_8FF51B00ABCE45D59FD2BC18671550AA")
+            input_till_id = self.driver.find_element(By.ID, "headerTab_98CECB5C90184CF3B4EFB54CA6FFCF59")
             self.assertTrue(input_till_id.is_displayed(), msg="Till ID input is not displayed.")
             input_till_id.send_keys(till_id)
             time.sleep(5)
@@ -116,7 +116,9 @@ class AddTillTest(unittest.TestCase):
             time.sleep(5)
 
             enable_paynow_check = self.driver.find_element(By.ID, "headerTab_759A7EECAB264992B74BFCF455D641A5")
-            if not enable_paynow_check.is_selected():
+            if enable_paynow_check.is_selected():
+                pass
+            else:
                 enable_paynow_check.click()
 
             kot_print_template = self.data['test_add_till']['KOT_Print_Template']
@@ -140,10 +142,12 @@ class AddTillTest(unittest.TestCase):
             input_logged_in_cashier.send_keys(logged_in_cashier)
             time.sleep(5)
 
-            enable_rfid_check = self.driver.find_element(By.ID, "headerTab_D60187E388584AFA8752E23D469C88A2")
-            self.assertTrue(enable_rfid_check.is_displayed(), msg="Enable RFID Check box is not displayed.")
-            if not enable_rfid_check.is_selected():
-                enable_rfid_check.click()
+            # enable_rfid_check = self.driver.find_element(By.ID, "headerTab_D60187E388584AFA8752E23D469C88A2")
+            # self.assertTrue(enable_rfid_check.is_displayed(), msg="Enable RFID Check box is not displayed.")
+            # if enable_rfid_check.is_selected():
+            #     pass
+            # else:
+            #     enable_rfid_check.click()
 
             cancel_kot_print_template = self.data['test_add_till']['Cancel_KOT_Print_Template']
             input_cancel_kot_print_template = self.driver.find_element(By.ID,

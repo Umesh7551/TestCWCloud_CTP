@@ -52,7 +52,7 @@ class SalesByCustomerReportTest(unittest.TestCase):
             time.sleep(5)
 
             sidebar_menu_sales_by_customer_report = self.driver.find_element(By.XPATH,
-                                                                             "//span[text()='Sales by Customer Report']")
+                                                                             "//span[text()='Sales by Customer']")
             self.assertTrue(sidebar_menu_sales_by_customer_report.is_displayed(),
                             msg="Sales By Customer Report menu is not displayed.")
             sidebar_menu_sales_by_customer_report.click()

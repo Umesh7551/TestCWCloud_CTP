@@ -72,7 +72,9 @@ class AddProductCatalogueTest(unittest.TestCase):
 
             active_checkbox = self.driver.find_element(By.ID, "headerTab_339E009F5745408FB2ADF8C83E05373D")
             self.assertTrue(active_checkbox.is_selected(), msg="Active Check box is not Selected.")
-            if not active_checkbox.is_selected():
+            if active_checkbox.is_selected():
+                pass
+            else:
                 # If it's not selected, select the checkbox
                 active_checkbox.click()
 

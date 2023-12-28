@@ -72,18 +72,21 @@ class AddBusinessUnitTest(unittest.TestCase):
             name = self.data["test_add_business_unit"]["Name"]
             input_name = self.driver.find_element(By.ID, "headerTab_4D6B14DB22364215ADF09FC23E3483F1")
             self.assertTrue(input_name.is_displayed(), msg="Name input is not displayed.")
+            input_name.clear()
             input_name.send_keys(name)
             time.sleep(5)
 
             description = self.data["test_add_business_unit"]["Description"]
             input_description = self.driver.find_element(By.ID, "headerTab_BDC6B7BF5CB844A8803628E9E2D0F08E")
             self.assertTrue(input_description.is_displayed(), msg="Description input is not displayed.")
+            input_description.clear()
             input_description.send_keys(description)
             time.sleep(5)
 
             type = self.data["test_add_business_unit"]["Type"]
             input_type = self.driver.find_element(By.ID, "headerTab_E28CA6746CD74D5187C6AE3127E83974")
             self.assertTrue(input_type.is_displayed(), msg="Type input is not displayed.")
+            input_type.clear()
             input_type.send_keys(type)
             time.sleep(5)
 
@@ -92,48 +95,56 @@ class AddBusinessUnitTest(unittest.TestCase):
                                                                   "headerTab_AD346BE71E244CCEA9F7CC549EEC3CDA")
             self.assertTrue(input_parent_business_unit.is_displayed(),
                             msg="Parent Business Unit input is not displayed.")
+            input_parent_business_unit.clear()
             input_parent_business_unit.send_keys(parent_business_unit)
             time.sleep(5)
 
             legal_entity = self.data["test_add_business_unit"]["Legal_Entity"]
             input_legal_entity = self.driver.find_element(By.ID, "headerTab_47D85D2F9BDA45FF9F5C081633BBE7AE")
             self.assertTrue(input_legal_entity.is_displayed(), msg="Legal Entity input is not displayed.")
+            input_legal_entity.clear()
             input_legal_entity.send_keys(legal_entity)
             time.sleep(5)
 
             gst_no = self.data["test_add_business_unit"]["GST_No"]
             input_gst_no = self.driver.find_element(By.ID, "headerTab_7D3FB0064E2F4804A855BB8F8D14D1E2")
             self.assertTrue(input_gst_no.is_displayed(), msg="GST No input is not displayed.")
+            input_gst_no.clear()
             input_gst_no.send_keys(gst_no)
             time.sleep(5)
 
             currency = self.data["test_add_business_unit"]["Currency"]
             input_currency = self.driver.find_element(By.ID, "headerTab_94F9DE8CCC4D4460A1900A8C4A1ACF75")
             self.assertTrue(input_currency.is_displayed(), msg="Currency input is not displayed.")
+            input_currency.clear()
             input_currency.send_keys(currency)
             time.sleep(5)
 
             external_bunit_ref = self.data["test_add_business_unit"]["External_Bunit_ref"]
             input_external_bunit_ref = self.driver.find_element(By.ID, "headerTab_6965D8D307D340BFA38C14E033EEAB8E")
             self.assertTrue(input_external_bunit_ref.is_displayed(), msg="Currency input is not displayed.")
+            input_external_bunit_ref.clear()
             input_external_bunit_ref.send_keys(external_bunit_ref)
             time.sleep(5)
 
             latitude = self.data["test_add_business_unit"]["Latitude"]
             input_latitude = self.driver.find_element(By.ID, "headerTab_1726DBCFE8464A50A2E6C3CB1FC533AC")
             self.assertTrue(input_latitude.is_displayed(), msg="Latitude input is not displayed.")
+            input_latitude.clear()
             input_latitude.send_keys(latitude)
             time.sleep(5)
 
             longitude = self.data["test_add_business_unit"]["Longitude"]
             input_longitude = self.driver.find_element(By.ID, "headerTab_C1B99AD7C25A40A18B69B61AE44BC7C7")
             self.assertTrue(input_longitude.is_displayed(), msg="Longitude input is not displayed.")
+            input_longitude.clear()
             input_longitude.send_keys(longitude)
             time.sleep(5)
 
             image_url = self.data["test_add_business_unit"]["Image_url"]
             input_image_url = self.driver.find_element(By.ID, "headerTab_C0688902314444D8B670C912B7D2F181")
             self.assertTrue(input_image_url.is_displayed(), msg="Image URL input is not displayed.")
+            input_image_url.clear()
             input_image_url.send_keys(image_url)
             time.sleep(5)
 

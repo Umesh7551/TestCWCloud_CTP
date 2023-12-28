@@ -76,10 +76,10 @@ class AddReturnReasonsTest(unittest.TestCase):
 
             active_check = self.driver.find_element(By.ID, "headerTab_AA3A8B7C64394167AA35A4B971AD6890")
             self.assertTrue(active_check.is_displayed(), msg="Active Check box is not displayed.")
-            if not active_check.is_selected():
-                active_check.click()
-            else:
+            if active_check.is_selected():
                 pass
+            else:
+                active_check.click()
 
             description = self.data["test_add_return_reasons"]["Description"]
             input_description = self.driver.find_element(By.ID, "headerTab_A56B505BC1BE4FD2B7464AE36B055143")
@@ -89,17 +89,17 @@ class AddReturnReasonsTest(unittest.TestCase):
 
             customer_return_check = self.driver.find_element(By.ID, "headerTab_F13A676C6B524EA98E4F311E7CA96515")
             self.assertTrue(customer_return_check.is_displayed(), msg="Customer Return Check box is not displayed.")
-            if not customer_return_check.is_selected():
-                customer_return_check.click()
-            else:
+            if customer_return_check.is_selected():
                 pass
+            else:
+                customer_return_check.click()
 
             supplier_return_check = self.driver.find_element(By.ID, "headerTab_58BEB24E5F1E410EBB09C11A7A351826")
             self.assertTrue(supplier_return_check.is_displayed(), msg="Supplier Return Check box is not displayed.")
-            if not supplier_return_check.is_selected():
-                supplier_return_check.click()
-            else:
+            if supplier_return_check.is_selected():
                 pass
+            else:
+                supplier_return_check.click()
 
             save_button = self.driver.find_element(By.XPATH, "//button[@id='step1']")
             self.assertTrue(save_button.is_displayed(), msg="Save Button is not Displayed.")

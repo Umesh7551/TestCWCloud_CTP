@@ -82,6 +82,7 @@ class AddTaxTest(unittest.TestCase):
             rate = self.data['test_add_tax']['Rate']
             input_rate = self.driver.find_element(By.ID, "headerTab_B04D8168AAA44E1A98E79D7DBC7593BB")
             self.assertTrue(input_rate.is_displayed(), msg="Rate input is not displayed.")
+            input_rate.clear()
             input_rate.send_keys(rate)
             time.sleep(5)
 
@@ -98,7 +99,9 @@ class AddTaxTest(unittest.TestCase):
             time.sleep(5)
 
             is_default_check = self.driver.find_element(By.ID, "headerTab_B80E5787B5B548E48843C37E346D5CE3")
-            if not is_default_check.is_selected():
+            if is_default_check.is_selected():
+                pass
+            else:
                 is_default_check.click()
 
             save_button = self.driver.find_element(By.XPATH, "//button[@id='step1']")

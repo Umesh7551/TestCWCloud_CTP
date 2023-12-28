@@ -89,7 +89,7 @@
     "Custom_Attributes": "This is custom attribute field."
   },
   "test_add_pos_orders": {
-    "Store": "Exceloid-901",
+    "Store": "Banjara Hills - 70103",
     "Sale_Type": "",
     "Document_Type": "POS Order",
     "Document_No": "31233",
@@ -301,39 +301,39 @@
     "Storage_Capacity": "764736"
   },
   "test_add_till": {
-    "Store": "",
-    "POS_Type": "",
-    "Till_ID": "",
-    "Name": "",
-    "Description": "",
-    "Next_Order_Number": "",
-    "Prefix": "",
-    "Suffix": "",
-    "Access_Controller": "",
-    "KOT_Print_Template": "",
-    "Status": "",
-    "Logged_in_Cashier": "",
-    "Cancel_KOT_Print_Template": ""
+    "Store": "Banjara Hills",
+    "POS_Type": "Retail",
+    "Till_ID": "1231312",
+    "Name": "Santosh Pilli",
+    "Description": "This is test Till by Umesh Hindole",
+    "Next_Order_Number": "34444324",
+    "Prefix": "test prefix",
+    "Suffix": "test suffix",
+    "Access_Controller": "13323423444",
+    "KOT_Print_Template": "POS Order",
+    "Status": "Available",
+    "Logged_in_Cashier": "System User",
+    "Cancel_KOT_Print_Template": "POS Order"
   },
   "test_add_tax_category": {
-    "Business_Unit": "",
-    "Name": "",
-    "Description": "",
-    "Intra_Region_Tax": "",
-    "Inter_Region_Tax": ""
+    "Business_Unit": "Banjara Hills",
+    "Name": "Santosh Pilli",
+    "Description": "This is test Tax category by Umesh Hindole",
+    "Intra_Region_Tax": "GST 18%",
+    "Inter_Region_Tax": "GST 18%"
   },
   "test_add_tax": {
-    "Business_Unit": "",
-    "Name": "",
+    "Business_Unit": "Banjara Hills",
+    "Name": "Santosh Pilli",
     "Tax_Category": "",
-    "Rate": "",
+    "Rate": "100",
     "Parent_Tax_Rate": "",
-    "Description": ""
+    "Description": "This is test by Umesh."
   },
   "test_add_supplier_category": {
-    "Business_Unit": "",
-    "Code": "",
-    "Category_Name": ""
+    "Business_Unit": "Banjara Hills",
+    "Code": "45",
+    "Category_Name": "Electronics"
   },
   "test_pos_settings": {
     "Payment_Mode": "Paytm",
@@ -359,15 +359,15 @@
     "POS_Sales_Type": ""
   },
   "test_add_user": {
-    "Business_Unit": "",
-    "FirstName": "",
-    "LastName": "",
-    "UserName": "",
-    "Home_Dashboard": "",
-    "Home_Window": "",
-    "Home_Report": "",
-    "Email": "",
-    "Description": ""
+    "Business_Unit": "Banjara Hills",
+    "FirstName": "Santosh",
+    "LastName": "Pilli",
+    "UserName": "santosh.p",
+    "Home_Dashboard": "Test Dashboard",
+    "Home_Window": "Department",
+    "Home_Report": "Sales InsightsDashboard",
+    "Email": "santosh.p@exceloid.com",
+    "Description": "This is test user by Umesh Hindole"
   },
   "test_add_return_reasons": {
     "Search_Key": "",

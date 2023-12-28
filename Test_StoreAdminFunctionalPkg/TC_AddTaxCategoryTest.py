@@ -92,7 +92,9 @@ class AddTaxCategoryTest(unittest.TestCase):
             time.sleep(5)
 
             is_default_check = self.driver.find_element(By.ID, "headerTab_81D0B599D6FF4A4A9EF97EF1B24DF1DF")
-            if not is_default_check.is_selected():
+            if is_default_check.is_selected():
+                pass
+            else:
                 is_default_check.click()
 
             save_button = self.driver.find_element(By.XPATH, "//button[@id='step1']")

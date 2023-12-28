@@ -188,7 +188,9 @@ class AddPricingRulesTest(unittest.TestCase):
 
             active_check = self.driver.find_element(By.ID, "headerTab_D9A5F490B80B4FEE9C99B303D6AAB6D9")
             self.assertTrue(active_check.is_displayed(), msg="Active Check is not displayed.")
-            if not active_check.is_selected():
+            if active_check.is_selected():
+                pass
+            else:
                 active_check.click()
 
             save_button = self.driver.find_element(By.XPATH, "//button[@id='step1']")

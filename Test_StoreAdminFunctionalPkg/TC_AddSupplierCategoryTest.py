@@ -72,17 +72,21 @@ class AddSupplierCategoryTest(unittest.TestCase):
             code = self.data['test_add_supplier_category']['Code']
             input_code = self.driver.find_element(By.ID, "headerTab_BDB41292781044BC8D385C7F11249461")
             self.assertTrue(input_code.is_displayed(), msg="Code input is not displayed.")
+            input_code.clear()
             input_code.send_keys(code)
             time.sleep(5)
 
             category_name = self.data['test_add_supplier_category']['Category_Name']
             input_category_name = self.driver.find_element(By.ID, "headerTab_AA15BE6AB52C43AAAE5A12ED46012E5D")
             self.assertTrue(input_category_name.is_displayed(), msg="Category Name input is not displayed.")
+            input_category_name.clear()
             input_category_name.send_keys(category_name)
             time.sleep(5)
 
             default_check = self.driver.find_element(By.ID, "headerTab_31119DADA57D4D68ABA36936671675D0")
-            if not default_check.is_selected():
+            if default_check.is_selected():
+                pass
+            else:
                 default_check.click()
 
             save_button = self.driver.find_element(By.XPATH, "//button[@id='step1']")
